@@ -1,8 +1,11 @@
+// "use client"
+
 import React from 'react';
 import Banner from '@/components/common/Banner';
 import ImageTextBlock from '@/components/common/ImageTextBlock';
 import Card from '@/components/common/Card';
 import { InfiniteMovingCardsDemo } from '@/components/external/InfiniteCards';
+import HeroSection from '@/components/home/HeroSection';
 
 export default function Home() {
   const features = [
@@ -28,15 +31,21 @@ export default function Home() {
 
   return (
     <div>
+      {/* Main Hero Section */}
+      <HeroSection />
+
+
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="hero"
         title="Revolutionizing Financial Technology"
         subtitle="Innovative Solutions for Modern Businesses"
         description="Transform your financial operations with our cutting-edge technology solutions designed for banks, NBFCs, and financial institutions."
         ctaText="Get Started"
         ctaLink="/contact"
-      />
+      /> */}
+
+
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">

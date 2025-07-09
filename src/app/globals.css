@@ -71,3 +71,11 @@
     }
   }
 }
+
+
+/* // Animations */
+@keyframes scale-up-bottom-alternate {0% { transform: scale(0.5); transform-origin: 50% 100%; } 100% { transform: scale(1); transform-origin: 50% 100%;} }
+
+.scale-up-bottom-alternate { 
+    animation: scale-up-bottom-alternate 1s ease 0s 1 alternate none; 
+}

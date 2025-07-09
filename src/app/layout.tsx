@@ -4,8 +4,8 @@ import './globals.css';
 import Navigation from '@/components/common/Navigation';
 import Footer from '@/components/common/Footer';
 import CookiePopup from '@/components/common/CookiePopup';
-import { NavbarDemo } from '@/components/ui/NavBar.tsx';
-
+import { NavigationBar } from '@/components/common/NavigationBar';
+import NavBar from '@/components/common/NavBar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -22,14 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <Navigation /> */}
-        <div className='relative'>
-          <NavbarDemo />
-        </div>
+          {/* <NavigationBar /> */}
+          <NavBar />
         
         <main>{children}</main>
         <Footer />
-        <CookiePopup />
+        {/* <CookiePopup /> */}
       </body>
     </html>
   );
