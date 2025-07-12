@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation.js';
 import Link from 'next/link.js';
 
-export default function NavBar(){
+export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const pathname = usePathname();
@@ -313,25 +313,13 @@ export default function NavBar(){
                                 <span>hello@insightai.com</span>
                             </span>
                         </div>
-                        <div className="flex items-center space-x-4">
-                            <button className="flex items-center space-x-1 hover:text-blue-300 transition-colors">
-                                <Globe className="h-4 w-4" />
-                                <span>EN</span>
-                                <ChevronDown className="h-3 w-3" />
-                            </button>
-                            <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 px-4 py-1 rounded text-sm font-medium transition-colors">
-                                Talk to sales
-                            </Link>
-                            <Link href="/demo" className="border border-gray-600 hover:border-gray-400 px-4 py-1 rounded text-sm font-medium transition-colors">
-                                Try for free
-                            </Link>
-                        </div>
+
                     </div>
                 </div>
             </div>
 
             {/* Main Navigation */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <motion.div
@@ -357,8 +345,8 @@ export default function NavBar(){
                                     <Link
                                         href={item.href}
                                         className={`flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActivePage(item.href)
-                                                ? 'text-primary border-b-2 border-primary'
-                                                : 'text-gray-700 hover:text-primary'
+                                            ? 'text-primary border-b-2 border-primary'
+                                            : 'text-gray-700 hover:text-primary'
                                             }`}
                                     >
                                         {item.name}
@@ -425,6 +413,17 @@ export default function NavBar(){
                                 </div>
                             ))}
                         </div>
+
+
+                    </div>
+
+                    <div className="flex items-center space-x-4">
+                        <Link href="/contact" className="px-6 sm:px-8 py-2 flex items-center justify-center bg-black text-white rounded-full hover:bg-slate-800">
+                            Talk to sales
+                        </Link>
+                        <Link href="/demo" className="px-6 sm:px-8 py-2 flex items-center justify-center border border-gray-500 rounded-full hover:bg-gray-100">
+                            Try for free
+                        </Link>
                     </div>
 
                     {/* Mobile menu button */}
@@ -456,8 +455,8 @@ export default function NavBar(){
                                     <Link
                                         href={item.href}
                                         className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${isActivePage(item.href)
-                                                ? 'text-primary bg-blue-50'
-                                                : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                                            ? 'text-primary bg-blue-50'
+                                            : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                                             }`}
                                         onClick={() => setIsOpen(false)}
                                     >
@@ -510,6 +509,7 @@ export default function NavBar(){
                     </motion.div>
                 )}
             </AnimatePresence>
+            
         </nav>
     );
 };

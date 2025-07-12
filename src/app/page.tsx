@@ -6,6 +6,7 @@ import ImageTextBlock from '@/components/common/ImageTextBlock';
 import Card from '@/components/common/Card';
 import { InfiniteMovingCardsDemo } from '@/components/external/InfiniteCards';
 import HeroSection from '@/components/home/HeroSection';
+import Features from '@/components/home/Features';
 
 export default function Home() {
   const features = [
@@ -44,6 +45,9 @@ export default function Home() {
         ctaText="Get Started"
         ctaLink="/contact"
       /> */}
+
+        {/* Feature Section */}
+        <Features />
 
 
 
