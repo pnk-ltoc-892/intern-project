@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
 
 export default function Careers() {
@@ -78,7 +78,7 @@ export default function Careers() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Join Our Team"
         subtitle="Build the Future of FinTech"
@@ -87,7 +87,7 @@ export default function Careers() {
           { label: 'Home', href: '/' },
           { label: 'Careers', href: '/careers' }
         ]}
-      />
+      /> */}
 
       {/* Company Culture */}
       <section className="py-20 bg-white">

@@ -299,25 +299,6 @@ export default function NavBar() {
 
     return (
         <nav className="bg-white shadow-lg sticky top-0 z-50">
-            {/* Top Bar */}
-            <div className="bg-gray-900 text-white py-2">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center text-sm">
-                        <div className="flex items-center space-x-6">
-                            <span className="flex items-center space-x-2">
-                                <Phone className="h-4 w-4" />
-                                <span>+1 (555) 123-4567</span>
-                            </span>
-                            <span className="flex items-center space-x-2">
-                                <Mail className="h-4 w-4" />
-                                <span>hello@insightai.com</span>
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
             {/* Main Navigation */}
             <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
                 <div className="flex justify-between items-center h-16">

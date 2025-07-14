@@ -6,6 +6,7 @@ import Footer from '@/components/common/Footer';
 import CookiePopup from '@/components/common/CookiePopup';
 import { NavigationBar } from '@/components/common/NavigationBar';
 import NavBar from '@/components/common/NavBar';
+import Banner from '@/components/common/Banner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -22,10 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-          {/* <NavigationBar /> */}
+          {/* Top Banner Component */}
+          {/* // ! Can Be Made Sticky To Whole Website */}
+          <Banner />
+          
+          {/* Navigation Bar */}
           <NavBar />
         
         <main>{children}</main>
+
+        {/* Footer Component */}
         <Footer />
         {/* <CookiePopup /> */}
       </body>
