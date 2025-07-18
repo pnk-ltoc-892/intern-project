@@ -3,7 +3,7 @@
 import HeroSection from '@/components/home/HeroSection'
 import React from 'react'
 import What from '@/components/home/What'
-import FAQSection from '@/components/home/Faq'
+import FAQSection from '@/components/home/FAQSection'
 const page = () => {
     return (
         <>

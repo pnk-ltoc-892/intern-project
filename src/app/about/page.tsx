@@ -41,7 +41,7 @@ export default function About() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="About TechStartup"
         subtitle="Our Story"
@@ -50,7 +50,7 @@ export default function About() {
           { label: 'Home', href: '/' },
           { label: 'About Us', href: '/about' }
         ]}
-      />
+      /> */}
 
       {/* Company Story */}
       <ImageTextBlock

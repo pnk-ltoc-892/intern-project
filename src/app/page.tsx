@@ -1,12 +1,18 @@
 // "use client"
 
 import React from 'react';
-import Banner from '@/components/common/Banner';
 import ImageTextBlock from '@/components/common/ImageTextBlock';
 import Card from '@/components/common/Card';
-import { InfiniteMovingCardsDemo } from '@/components/external/InfiniteCards';
 import HeroSection from '@/components/home/HeroSection';
 import Features from '@/components/home/Features';
+import FAQSection from '@/components/home/FAQSection';
+import InfiniteMovingCardsSection from '@/components/common/InfiniteMovingCardsSection';
+import TestimonialSection from '@/components/home/TestimonialSection';
+import TeamMemberSection from '@/components/common/TeamMemberSection';
+import RelationsSection from '@/components/home/RelationsSection';
+import { Component } from '@/components/common/NewsLetter';
+
+
 
 export default function Home() {
   const features = [
@@ -36,18 +42,38 @@ export default function Home() {
       <HeroSection />
 
 
-      {/* Hero Banner */}
-      {/* <Banner
-        type="hero"
-        title="Revolutionizing Financial Technology"
-        subtitle="Innovative Solutions for Modern Businesses"
-        description="Transform your financial operations with our cutting-edge technology solutions designed for banks, NBFCs, and financial institutions."
-        ctaText="Get Started"
-        ctaLink="/contact"
-      /> */}
+      {/* Infinite Sliding Cards Section */}
+      {/* // ! Optimize For Sliding Image Section */}
+      {/* <InfiniteMovingCardsSection /> */}
 
-        {/* Feature Section */}
-        <Features />
+      {/* Infinite Sliding Cards Section */}
+      {/* // ! Optimize For Sliding Image Section */}
+      <RelationsSection />
+
+
+      {/* Team Members Section */}
+      {/* // ! Optimize For Sliding Image Section */}
+      <TeamMemberSection />
+
+
+      {/* Feature Section */}
+      <Features />
+
+
+      {/* Testimonial Sections */}
+      {/* // ! Optimize For Sliding Image Section */}
+      <TestimonialSection />
+
+
+      {/* Infinite Sliding Cards Section */}
+      {/* // ! Optimize For Sliding Image Section */}
+      <div className="relative w-full bg-gray-50">
+        <Component />
+      </div>
+
+
+      {/* FAQ Section */}
+      <FAQSection />
 
 
 
@@ -129,9 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div>
-        <InfiniteMovingCardsDemo />
-      </div>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700">
