@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 export default function FAQs() {
@@ -106,7 +106,7 @@ export default function FAQs() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Frequently Asked Questions"
         subtitle="Get Answers"
@@ -115,7 +115,7 @@ export default function FAQs() {
           { label: 'Home', href: '/' },
           { label: 'FAQs', href: '/faqs' }
         ]}
-      />
+      /> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">

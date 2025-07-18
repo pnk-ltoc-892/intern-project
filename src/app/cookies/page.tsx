@@ -1,11 +1,11 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 
 export default function CookiesInfo() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Cookie Policy"
         subtitle="Cookie Information"
@@ -14,7 +14,7 @@ export default function CookiesInfo() {
           { label: 'Home', href: '/' },
           { label: 'Cookie Policy', href: '/cookies' }
         ]}
-      />
+      /> */}
 
       {/* Cookie Policy Content */}
       <section className="py-20 bg-white">

@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
 
 export default function Blogs() {
@@ -81,7 +80,7 @@ export default function Blogs() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Blog & Insights"
         subtitle="Industry Knowledge"
@@ -90,7 +89,7 @@ export default function Blogs() {
           { label: 'Home', href: '/' },
           { label: 'Blogs', href: '/blogs' }
         ]}
-      />
+      /> */}
 
       {/* Featured Post */}
       <section className="py-20 bg-white">

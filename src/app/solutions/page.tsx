@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
 
 export default function Solutions() {
@@ -72,7 +72,7 @@ export default function Solutions() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Our Solutions"
         subtitle="Comprehensive Technology Solutions"
@@ -81,7 +81,7 @@ export default function Solutions() {
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' }
         ]}
-      />
+      /> */}
 
       {/* Solutions by Type */}
       <section className="py-20 bg-white">

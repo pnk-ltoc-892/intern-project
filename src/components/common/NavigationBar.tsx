@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 
 
 export function NavigationBar() {
@@ -12,7 +12,7 @@ export function NavigationBar() {
     );
 }
 
-function Navbar({ className }: { className?: string }) {
+function Navbar() {
     const [active, setActive] = useState<string | null>(null);
     return (
         <div

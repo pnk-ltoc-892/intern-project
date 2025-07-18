@@ -1,11 +1,11 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 
 export default function TermsConditions() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Terms & Conditions"
         subtitle="Service Agreement"
@@ -14,7 +14,7 @@ export default function TermsConditions() {
           { label: 'Home', href: '/' },
           { label: 'Terms & Conditions', href: '/terms-conditions' }
         ]}
-      />
+      /> */}
 
       {/* Terms Content */}
       <section className="py-20 bg-white">

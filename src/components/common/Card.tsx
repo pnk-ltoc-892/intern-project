@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 interface CardProps {
   title: string;
@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({
   title,
   description,
   imageUrl,
-  imageAlt,
+  // imageAlt,
   ctaText,
   ctaLink,
   variant = 'default',

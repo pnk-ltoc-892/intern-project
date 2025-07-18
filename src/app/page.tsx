@@ -6,7 +6,7 @@ import Card from '@/components/common/Card';
 import HeroSection from '@/components/home/HeroSection';
 import Features from '@/components/home/Features';
 import FAQSection from '@/components/home/FAQSection';
-import InfiniteMovingCardsSection from '@/components/common/InfiniteMovingCardsSection';
+// import InfiniteMovingCardsSection from '@/components/common/InfiniteMovingCardsSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
 import TeamMemberSection from '@/components/common/TeamMemberSection';
 import RelationsSection from '@/components/home/RelationsSection';

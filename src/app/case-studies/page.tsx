@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
 
 export default function CaseStudies() {
@@ -63,7 +63,7 @@ export default function CaseStudies() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="case-study"
         title="Case Studies"
         subtitle="Success Stories"
@@ -72,7 +72,7 @@ export default function CaseStudies() {
           { label: 'Home', href: '/' },
           { label: 'Case Studies', href: '/case-studies' }
         ]}
-      />
+      /> */}
 
       {/* Case Studies Grid */}
       <section className="py-20 bg-white">

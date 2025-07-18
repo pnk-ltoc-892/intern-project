@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Menu, X, Globe, Phone, Mail } from 'lucide-react';
+import { ChevronDown, Menu, X} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation.js';
 import Link from 'next/link.js';

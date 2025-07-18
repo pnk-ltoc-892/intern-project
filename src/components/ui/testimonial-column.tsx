@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image.js";
 
 
 export default function TestimonialsColumn(props: {
@@ -29,7 +30,7 @@ export default function TestimonialsColumn(props: {
                                 <div className="p-10 rounded-3xl border shadow-lg shadow-primary/10 max-w-xs w-full" key={i}>
                                     <div>{text}</div>
                                     <div className="flex items-center gap-2 mt-5">
-                                        <img
+                                        <Image
                                             width={40}
                                             height={40}
                                             src={image}

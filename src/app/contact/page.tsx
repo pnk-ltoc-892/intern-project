@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from '@/components/common/Banner';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -30,7 +29,7 @@ export default function Contact() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="contact"
         title="Contact Us"
         subtitle="Get in Touch"
@@ -39,7 +38,7 @@ export default function Contact() {
           { label: 'Home', href: '/' },
           { label: 'Contact Us', href: '/contact' }
         ]}
-      />
+      /> */}
 
       {/* Contact Form and Info */}
       <section className="py-20 bg-white">

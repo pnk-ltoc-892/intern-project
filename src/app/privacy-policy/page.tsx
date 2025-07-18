@@ -1,11 +1,11 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
+// import Banner from '@/components/common/Banner';
 
 export default function PrivacyPolicy() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Privacy Policy"
         subtitle="Your Privacy Matters"
@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
           { label: 'Home', href: '/' },
           { label: 'Privacy Policy', href: '/privacy-policy' }
         ]}
-      />
+      /> */}
 
       {/* Privacy Policy Content */}
       <section className="py-20 bg-white">

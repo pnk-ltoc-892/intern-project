@@ -1,6 +1,7 @@
 import React from 'react';
 // import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
+import Image from 'next/image.js';
 
 export default function Careers() {
   const openPositions = [
@@ -189,7 +190,7 @@ export default function Careers() {
               </ul>
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl">
-              <img
+              <Image
                 src="https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg"
                 alt="Team collaboration"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

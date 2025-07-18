@@ -1,6 +1,6 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
+import Image from 'next/image.js';
 
 export default function TrustCenter() {
   const securityFeatures = [
@@ -52,7 +52,7 @@ export default function TrustCenter() {
   return (
     <div>
       {/* Hero Banner */}
-      <Banner
+      {/* <Banner
         type="inner"
         title="Trust Center"
         subtitle="Security & Compliance"
@@ -61,7 +61,7 @@ export default function TrustCenter() {
           { label: 'Home', href: '/' },
           { label: 'Trust Center', href: '/trust-center' }
         ]}
-      />
+      /> */}
 
       {/* Security Overview */}
       <section className="py-20 bg-white">
@@ -160,7 +160,7 @@ export default function TrustCenter() {
               </ul>
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl">
-              <img
+              <Image
                 src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg"
                 alt="Data protection and security"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

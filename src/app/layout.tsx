@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Navigation from '@/components/common/Navigation';
+// import Navigation from '@/components/common/Navigation';
 import Footer from '@/components/common/Footer';
-import CookiePopup from '@/components/common/CookiePopup';
-import { NavigationBar } from '@/components/common/NavigationBar';
+// import CookiePopup from '@/components/common/CookiePopup';
+// import { NavigationBar } from '@/components/common/NavigationBar';
 import NavBar from '@/components/common/NavBar';
 import Banner from '@/components/common/Banner';
 const inter = Inter({ subsets: ['latin'] });

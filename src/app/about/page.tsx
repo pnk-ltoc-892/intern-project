@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from '@/components/common/Banner';
 import ImageTextBlock from '@/components/common/ImageTextBlock';
 import Card from '@/components/common/Card';
 

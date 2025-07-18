@@ -2,7 +2,6 @@
 
 import React from "react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
-import { div } from "framer-motion/client";
 
 const people = [
     {
