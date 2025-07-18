@@ -154,7 +154,7 @@ export default function HeroSection() {
         <div className="bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px] pointer-events-none' flex flex-col sm:flex-row justify-end px-2 sm:px-12">
 
             {/* Hero Section */}
-            <section className="w-full sm:w-[50%] text-black relative py-12 md:py-24 px-4 sm:mt-15 mt-15 text-center">
+            <section className="min-h-[80vh] w-full sm:w-[50%] text-black relative py-12 md:py-24 px-4 sm:mt-15 mt-15 text-center">
                 <h1
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 md:mb-8"
                 >
