@@ -1,14 +1,19 @@
 import React from 'react';
-// import Banner from '@/components/common/Banner';
 import Card from '@/components/common/Card';
+import Link from 'next/link.js';
+import CTASection from '@/components/common/CTASection';
+
 
 export default function Solutions() {
+  
   const solutionsByType = [
     {
       title: 'WizDoc',
       description: 'Advanced document processing and verification system powered by AI to detect fraud and ensure document authenticity.',
       ctaText: 'Learn More',
       ctaLink: '/solutions/wizdoc',
+      imageUrl: '/Solutions/solution.jpeg',
+      imageAlt: 'WizDoc',
       tags: ['AI-Powered', 'Document Verification']
     },
     {
@@ -16,6 +21,8 @@ export default function Solutions() {
       description: 'Comprehensive anti-money laundering solutions to meet regulatory requirements and reduce compliance risks.',
       ctaText: 'Explore AML',
       ctaLink: '/solutions/aml',
+      imageUrl: '/Solutions/solution.jpeg',
+      imageAlt: 'WizDoc',
       tags: ['Compliance', 'Risk Management']
     },
     {
@@ -23,6 +30,8 @@ export default function Solutions() {
       description: 'Tools and systems designed specifically for Chief Risk Officers to manage and monitor organizational risk.',
       ctaText: 'View CRO Tools',
       ctaLink: '/solutions/cros',
+      imageUrl: '/Solutions/solution.jpeg',
+      imageAlt: 'WizDoc',
       tags: ['Risk Management', 'Executive Tools']
     },
     {
@@ -30,6 +39,8 @@ export default function Solutions() {
       description: 'Money Laundering Reporting Officer platform for comprehensive reporting and monitoring capabilities.',
       ctaText: 'Discover MLRO',
       ctaLink: '/solutions/mlros',
+      imageUrl: '/Solutions/solution.jpeg',
+      imageAlt: 'WizDoc',
       tags: ['Reporting', 'Monitoring']
     },
     {
@@ -37,6 +48,8 @@ export default function Solutions() {
       description: 'State-of-the-art technology to identify and prevent document forgery using advanced machine learning algorithms.',
       ctaText: 'Learn More',
       ctaLink: '/solutions/document-forgery',
+      imageUrl: '/Solutions/solution.jpeg',
+      imageAlt: 'WizDoc',
       tags: ['AI Detection', 'Security']
     },
     {
@@ -44,6 +57,8 @@ export default function Solutions() {
       description: 'Robust and secure API infrastructure for seamless integration with existing systems and third-party applications.',
       ctaText: 'View APIs',
       ctaLink: '/solutions/apis',
+      imageUrl: '/Solutions/solution.jpeg',
+      imageAlt: 'WizDoc',
       tags: ['Integration', 'Developer Tools']
     }
   ];
@@ -61,7 +76,7 @@ export default function Solutions() {
     {
       title: 'NBFC Solutions',
       description: 'Specialized solutions for Non-Banking Financial Companies to streamline operations and ensure regulatory compliance.',
-      imageUrl: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
+      imageUrl: '/Solutions/solution.jpeg',
       imageAlt: 'NBFC solutions',
       ctaText: 'Discover NBFC',
       ctaLink: '/solutions/nbfcs',
@@ -69,41 +84,40 @@ export default function Solutions() {
     }
   ];
 
+
   return (
     <div>
-      {/* Hero Banner */}
-      {/* <Banner
-        type="inner"
-        title="Our Solutions"
-        subtitle="Comprehensive Technology Solutions"
-        description="Explore our range of innovative solutions designed to transform your financial operations."
-        breadcrumb={[
-          { label: 'Home', href: '/' },
-          { label: 'Solutions', href: '/solutions' }
-        ]}
-      /> */}
-
       {/* Solutions by Type */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="">
+        <div className="mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px]">
+
+          <div className='flex gap-1 font-semibold'>
+            <Link href={'/'} className='border-b-black'>Home</Link>
+            <span>{">"}</span>
+            <span>Solutions</span>
+          </div>
+
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Solutions by Type
+              Our Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our comprehensive suite of technology solutions designed to address specific business challenges.
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className='py-8 w-[75%] mx-auto'>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {solutionsByType.map((solution, index) => (
               <Card
                 key={index}
                 title={solution.title}
                 description={solution.description}
+                imageUrl={solution.imageUrl}
+                imageAlt={solution.imageAlt}
                 ctaText={solution.ctaText}
                 ctaLink={solution.ctaLink}
-                variant="feature"
                 tags={solution.tags}
               />
             ))}
@@ -111,8 +125,10 @@ export default function Solutions() {
         </div>
       </section>
 
+      <CTASection />
+
       {/* Solutions by Industry */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -133,39 +149,12 @@ export default function Solutions() {
                 imageAlt={solution.imageAlt}
                 ctaText={solution.ctaText}
                 ctaLink={solution.ctaLink}
-                variant="feature"
                 tags={solution.tags}
               />
             ))}
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Need a Custom Solution?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Our team of experts can work with you to develop custom solutions that meet your specific business requirements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              Contact Us
-            </a>
-            <a
-              href="/case-studies"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-            >
-              View Case Studies
-            </a>
-          </div>
-        </div>
-      </section>
+      </section> */}
     </div>
   );
 }

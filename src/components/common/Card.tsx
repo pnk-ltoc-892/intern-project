@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-// import Image from 'next/image';
+import Image from 'next/image.js';
+
 
 interface CardProps {
   title: string;
@@ -9,54 +10,57 @@ interface CardProps {
   imageAlt?: string;
   ctaText?: string;
   ctaLink?: string;
-  variant?: 'default' | 'feature' | 'blog' | 'case-study';
   tags?: string[];
 }
+
 
 const Card: React.FC<CardProps> = ({
   title,
   description,
   imageUrl,
-  // imageAlt,
+  imageAlt,
   ctaText,
   ctaLink,
-  variant = 'default',
   tags = []
 }) => {
-  const getCardStyles = () => {
-    switch (variant) {
-      case 'feature':
-        return 'bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6';
-      case 'blog':
-        return 'bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden';
-      case 'case-study':
-        return 'bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6';
-      default:
-        return 'bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6';
-    }
-  };
+  console.log(imageUrl);
+
 
   return (
-    <div className={getCardStyles()}>
+    <div className=" flex flex-col items-start justify-between bg-white p-4 border-2 border-gray-200 rounded-xl hover:scale-101 shadow-gray-400 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+
       {/* Image */}
-      {imageUrl && (
-        <div className="relative h-48 mb-4 rounded-lg overflow-hidden">
-          {/* <Image
+      {imageUrl ? (
+        <div className="relative h-56 w-full overflow-hidden rounded-lg">
+          <Image
             src={imageUrl}
             alt={imageAlt || title}
             fill
-            className="object-cover hover:scale-105 transition-transform duration-300"
-          /> */}
+            className="object-cover transition-transform duration-300"
+          />
         </div>
-      )}
+      )
+        : null
+      }
+
+
+      {/* Title */}
+      <h3 className="text-2xl font-bold text-gray-900 py-2">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-lg text-gray-700 py-2 leading-relaxed">
+        {description}
+      </p>
 
       {/* Tags */}
       {tags.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-3">
+        <div className="flex flex-wrap gap-2 py-2">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full"
+              className="px-3 py-1 bg-gray-800 text-gray-100 text-xs font-medium rounded-full"
             >
               {tag}
             </span>
@@ -64,27 +68,14 @@ const Card: React.FC<CardProps> = ({
         </div>
       )}
 
-      {/* Title */}
-      <h3 className="text-xl font-semibold text-gray-900 mb-3">
-        {title}
-      </h3>
-
-      {/* Description */}
-      <p className="text-gray-600 mb-4 leading-relaxed">
-        {description}
-      </p>
-
       {/* CTA */}
       {ctaText && ctaLink && (
         <Link
-          href={ctaLink}
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
-        >
-          {ctaText}
-          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
+            href={ctaLink}
+            className="pt-2 font-semibold text-gray-600 hover:text-gray-800 transition-all duration-300 hover:border-b-2 hover:border-b-gray-800"
+          >
+            {ctaText + " >"}
+          </Link>
       )}
     </div>
   );
