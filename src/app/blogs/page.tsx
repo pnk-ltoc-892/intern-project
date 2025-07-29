@@ -108,7 +108,6 @@ export default function Blogs() {
               imageAlt={featuredPost.imageAlt}
               ctaText={featuredPost.ctaText}
               ctaLink={featuredPost.ctaLink}
-              variant="blog"
               tags={featuredPost.tags}
             />
           </div>
@@ -140,7 +139,7 @@ export default function Blogs() {
                     imageAlt={post.imageAlt}
                     ctaText={post.ctaText}
                     ctaLink={post.ctaLink}
-                    variant="blog"
+    
                     tags={post.tags}
                   />
                 ))}

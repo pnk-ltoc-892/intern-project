@@ -85,7 +85,6 @@ export default function About() {
                 key={index}
                 title={member.title}
                 description={member.description}
-                variant="feature"
               />
             ))}
           </div>
@@ -110,7 +109,6 @@ export default function About() {
                 key={index}
                 title={value.title}
                 description={value.description}
-                variant="feature"
               />
             ))}
           </div>

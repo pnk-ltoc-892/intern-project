@@ -97,7 +97,6 @@ export default function Home() {
                 description={feature.description}
                 ctaText={feature.ctaText}
                 ctaLink={feature.ctaLink}
-                variant="feature"
               />
             ))}
           </div>
@@ -140,7 +139,6 @@ export default function Home() {
               imageAlt="Banking industry"
               ctaText="Explore Banking Solutions"
               ctaLink="/solutions/banks"
-              variant="feature"
             />
             <Card
               title="NBFCs"
@@ -149,7 +147,6 @@ export default function Home() {
               imageAlt="NBFC industry"
               ctaText="Discover NBFC Solutions"
               ctaLink="/solutions/nbfcs"
-              variant="feature"
             />
           </div>
         </div>
