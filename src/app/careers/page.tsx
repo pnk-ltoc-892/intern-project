@@ -102,16 +102,15 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <Card
                 key={index}
                 title={benefit.title}
                 description={benefit.description}
-                variant="feature"
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -127,7 +126,7 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {openPositions.map((position, index) => (
               <Card
                 key={index}
@@ -135,11 +134,10 @@ export default function Careers() {
                 description={position.description}
                 ctaText={position.ctaText}
                 ctaLink={position.ctaLink}
-                variant="feature"
                 tags={position.tags}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -193,6 +191,8 @@ export default function Careers() {
               <Image
                 src="https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg"
                 alt="Team collaboration"
+                height={0}
+                width={0}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>

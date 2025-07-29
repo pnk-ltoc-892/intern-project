@@ -42,7 +42,7 @@ export default function NavBar() {
                     {
                         name: 'Identity Verification (KYC)',
                         description: 'Onboard new users remotely',
-                        href: '/solutions#kyc',
+                        href: '/solutions/solution1',
                         icon: '🔍'
                     },
                     {
@@ -240,13 +240,18 @@ export default function NavBar() {
     const navigationItems = [
         { name: 'Home', href: '/', hasDropdown: false },
         { name: 'Solutions', href: '/solutions', hasDropdown: true, menu: solutionsMenu },
-        { name: 'Resources', href: '#', hasDropdown: true, menu: resourcesMenu },
-        { name: 'Company', href: '#', hasDropdown: true, menu: companyMenu },
-        { name: 'Pricing', href: '/pricing', hasDropdown: false },
-        { name: 'Contact', href: '/contact', hasDropdown: false }
+        // { name: 'Resources', href: '#', hasDropdown: true, menu: resourcesMenu },
+        // { name: 'Company', href: '#', hasDropdown: true, menu: companyMenu },
+        { name: 'Careers', href: '/careers', hasDropdown: false },
+        { name: 'Blogs', href: '/blogs', hasDropdown: false },
+        { name: 'About', href: '/about', hasDropdown: false },
+        { name: 'Contact', href: '/contact', hasDropdown: false },
+        { name: 'Privacy Policy', href: '/privacy-policy', hasDropdown: false },
+        { name: 'Terms & Conditions', href: '/terms-conditions', hasDropdown: false },
+        { name: 'Trust Center', href: '/trust-center', hasDropdown: false }
     ];
 
-    const isActivePage = (href) => {
+    const isActivePage = (href : string) => {
         if (href === '/') return pathname === '/';
         return pathname.startsWith(href);
     };
@@ -394,18 +399,16 @@ export default function NavBar() {
                                 </div>
                             ))}
                         </div>
-
-
                     </div>
 
-                    <div className="flex items-center space-x-4">
+                    {/* <div className="flex items-center">
                         <Link href="/contact" className="px-6 sm:px-8 py-2 flex items-center justify-center bg-black text-white rounded-full hover:bg-slate-800">
                             Talk to sales
                         </Link>
                         <Link href="/demo" className="px-6 sm:px-8 py-2 flex items-center justify-center border border-gray-500 rounded-full hover:bg-gray-100">
                             Try for free
                         </Link>
-                    </div>
+                    </div> */}
 
                     {/* Mobile menu button */}
                     <div className="lg:hidden">

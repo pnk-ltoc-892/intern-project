@@ -51,18 +51,6 @@ export default function TrustCenter() {
 
   return (
     <div>
-      {/* Hero Banner */}
-      {/* <Banner
-        type="inner"
-        title="Trust Center"
-        subtitle="Security & Compliance"
-        description="Learn about our commitment to security, privacy, and compliance standards."
-        breadcrumb={[
-          { label: 'Home', href: '/' },
-          { label: 'Trust Center', href: '/trust-center' }
-        ]}
-      /> */}
-
       {/* Security Overview */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +69,6 @@ export default function TrustCenter() {
                 key={index}
                 title={feature.title}
                 description={feature.description}
-                variant="feature"
               />
             ))}
           </div>
@@ -106,7 +93,6 @@ export default function TrustCenter() {
                 key={index}
                 title={cert.title}
                 description={cert.description}
-                variant="feature"
               />
             ))}
           </div>
@@ -163,6 +149,8 @@ export default function TrustCenter() {
               <Image
                 src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg"
                 alt="Data protection and security"
+                height={0}
+                width={0}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
