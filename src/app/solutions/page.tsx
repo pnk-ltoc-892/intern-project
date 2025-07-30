@@ -91,11 +91,11 @@ export default function Solutions() {
       <section className="">
         <div className="mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px]">
 
-          <div className='flex gap-1 font-semibold'>
-            <Link href={'/'} className='border-b-black'>Home</Link>
-            <span>{">"}</span>
-            <span>Solutions</span>
-          </div>
+          <div className="container mx-auto px-4 py-6 text-sm text-gray-700 flex gap-2 font-medium">
+                <Link href="/" className="hover:underline">Home</Link>
+                <span>{'>'}</span>
+                <Link href="/blogs" className="hover:underline">Solutions</Link>
+            </div>
 
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
