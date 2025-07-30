@@ -10,7 +10,7 @@ import FAQSection from '@/components/home/FAQSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
 import TeamMemberSection from '@/components/common/TeamMemberSection';
 import RelationsSection from '@/components/home/RelationsSection';
-import { Component } from '@/components/common/NewsLetter';
+import { Newsletter } from '@/components/common/NewsLetter';
 
 
 
@@ -67,9 +67,7 @@ export default function Home() {
 
       {/* Infinite Sliding Cards Section */}
       {/* // ! Optimize For Sliding Image Section */}
-      <div className="relative w-full bg-gray-50">
-        <Component />
-      </div>
+      <Newsletter />
 
 
       {/* FAQ Section */}
