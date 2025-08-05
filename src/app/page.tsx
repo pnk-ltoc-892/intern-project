@@ -11,6 +11,9 @@ import TestimonialSection from '@/components/home/TestimonialSection';
 import TeamMemberSection from '@/components/common/TeamMemberSection';
 import RelationsSection from '@/components/home/RelationsSection';
 import { Newsletter } from '@/components/common/NewsLetter';
+import HowItWorks from '@/components/home/HowItWorks';
+import PluginIntegration from '@/components/home/PluginIntergration';
+import FeaturesFlex from '@/components/home/FeaturesFlex';
 
 
 
@@ -55,10 +58,14 @@ export default function Home() {
       {/* // ! Optimize For Sliding Image Section */}
       <TeamMemberSection />
 
+      {/* How It Works Section */}
+      <HowItWorks />
 
-      {/* Feature Section */}
-      <Features />
+      {/* Integration Section */}
+      <PluginIntegration />
 
+      {/* Feature Split Flex*/}
+      <FeaturesFlex />
 
       {/* Testimonial Sections */}
       {/* // ! Optimize For Sliding Image Section */}
@@ -74,6 +81,10 @@ export default function Home() {
       <FAQSection />
 
 
+
+      {/* Feature Section */}
+      Additional Dummy Components
+      <Features />
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
