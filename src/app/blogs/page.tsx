@@ -1,166 +1,113 @@
-import React from 'react';
-import Card from '@/components/common/Card';
-import BlogsPageHeader from '@/components/blogs/BlogsPageHeader';
-import BlogCard from '@/components/blogs/BlogCard';
-import { Newsletter } from '@/components/common/NewsLetter';
-import Link from 'next/link.js';
+"use client";
+import React, { useState, useMemo } from "react";
+import BlogsPageHeader from "@/components/blogs/BlogsPageHeader";
+import BlogCard from "@/components/blogs/BlogCard";
+import { Newsletter } from "@/components/common/NewsLetter";
+import Link from "next/link.js";
+import { blogs } from "@/data/Blogs";
+
 
 export default function Blogs() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const blogs = [
-    {
-      id: 1,
-      title: "The Basics of Investing in Stocks for Millennials",
-      author: "Zoe Martinez",
-      readTime: "5 min read",
-      category: "Finance",
-      date: "Mar 09, 2024",
-      imageUrl: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
-      description:
-        "A simple guide to understanding the basics of investing, including stocks and portfolio diversification.",
-      excerpt:
-        "A simple guide to understanding the basics of investing, stocks, bonds, and portfolio diversification.",
-    },
-    {
-      id: 2,
-      title: "Effective Strategies for Building a Personal Brand",
-      author: "Kevin Tran",
-      readTime: "5 min read",
-      category: "Marketing",
-      date: "Mar 09, 2024",
-      imageUrl: "https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg",
-      description:
-        "Step-by-step strategies for creating a memorable and authentic personal brand online.",
-      excerpt:
-        "Step-by-step tactics to craft a memorable, authentic personal brand that resonates with your audience.",
-    },
-    {
-      id: 3,
-      title: "How to Prepare Yourself for a Successful Job Interview",
-      author: "Jamie Li",
-      readTime: "5 min read",
-      category: "Career Advice",
-      date: "Mar 09, 2024",
-      imageUrl: "https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg",
-      description:
-        "From research to follow-up, explore practical tips on how to make a great impression.",
-      excerpt:
-        "Practical tips—from company research to follow‑up etiquette—to help you ace your next job interview.",
-    },
-    {
-      id: 4,
-      title: "Latest Trends in AI and Machine Learning",
-      author: "Alex Kim",
-      readTime: "7 min read",
-      category: "Tech",
-      date: "Apr 15, 2024",
-      imageUrl: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
-      description:
-        "An overview of emerging technologies and their applications in various industries.",
-      excerpt:
-        "A quick overview of cutting‑edge AI and machine learning trends transforming industries today.",
-    },
-    {
-      id: 5,
-      title: "Designing User-Centered Interfaces: Best Practices",
-      author: "Sara Patel",
-      readTime: "6 min read",
-      category: "Design",
-      date: "May 02, 2024",
-      imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
-      description:
-        "Key principles and examples for creating intuitive, user-friendly UI designs.",
-      excerpt:
-        "Key principles and real‑world examples for crafting intuitive, user‑friendly interface designs.",
-    },
-    {
-      id: 6,
-      title: "Boost Your Productivity: Time Management Tips",
-      author: "Michael Chen",
-      readTime: "4 min read",
-      category: "Productivity",
-      date: "Jun 10, 2024",
-      imageUrl: "https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg",
-      description:
-        "Practical techniques to help you manage your time and tasks more effectively.",
-      excerpt:
-        "Proven time‑management techniques to help you streamline tasks and accomplish more every day.",
-    },
-    {
-      id: 7,
-      title: "Mindfulness Techniques for a Balanced Life",
-      author: "Emily Johnson",
-      readTime: "5 min read",
-      category: "Wellness",
-      date: "Jul 20, 2024",
-      imageUrl: "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg",
-      description:
-        "Explore simple mindfulness practices to reduce stress and improve focus.",
-      excerpt:
-        "Simple mindfulness exercises you can do anywhere to reduce stress and boost focus.",
-    },
-    {
-      id: 8,
-      title: "Top 10 Travel Destinations for Remote Workers",
-      author: "David Lee",
-      readTime: "8 min read",
-      category: "Travel",
-      date: "Aug 05, 2024",
-      imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
-      description:
-        "Discover the best cities and coworking spots around the world for digital nomads.",
-      excerpt:
-        "Discover the top cities and coworking hotspots worldwide perfect for remote work and adventure.",
-    },
-    {
-      id: 9,
-      title: "From Side Hustle to Startup: A Founder’s Journey",
-      author: "Ana Garcia",
-      readTime: "7 min read",
-      category: "Entrepreneurship",
-      date: "Sep 12, 2024",
-      imageUrl: "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg",
-      description:
-        "Lessons learned and tips for scaling your side project into a successful business.",
-      excerpt:
-        "Lessons and actionable tips for scaling your side hustle into a thriving startup venture.",
-    },
-  ];
+  // Extract unique categories
+  const categories = ["All", ...new Set(blogs.map((b) => b.category))];
 
+  // Filter + limit blogs
+  const filteredBlogs = useMemo(() => {
+    let filtered = blogs.filter((blog) => {
+      const matchesSearch =
+        blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.author.toLowerCase().includes(searchTerm.toLowerCase());
 
+      const matchesCategory =
+        selectedCategory === "All" || blog.category === selectedCategory;
+
+      return matchesSearch && matchesCategory;
+    });
+
+    // If no search/category filter, show only latest 6
+    if (searchTerm === "" && selectedCategory === "All") {
+      return filtered.slice(0, 6);
+    }
+
+    return filtered;
+  }, [searchTerm, selectedCategory]);
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       {/* Blog Page Header */}
       <BlogsPageHeader />
 
-      {/* Latest Blogs */}
-      <section className="py-10 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 py-4">
-            Featured Blogs
-          </h2>
+      {/* Blog Search + Categories */}
+      <section className="px-4 max-w-7xl mx-auto pt-12">
+        {/* Search bar */}
+        <div className="mb-8 flex justify-center">
+          <input
+            type="text"
+            placeholder="Search blogs..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="bg-white w-full lg:w-1/2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900"
+          />
         </div>
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog) => (
-            <Link href={'blogs/1'} key={blog.id}>
-              <BlogCard
-                key={blog.id}
-                title={blog.title}
-                author={blog.author}
-                readTime={blog.readTime}
-                category={blog.category}
-                date={blog.date}
-                imageUrl={blog.imageUrl}
-                excerpt={blog.excerpt}
-              />
-            </Link>
+
+        {/* Category Pills */}
+        <div className="flex flex-wrap gap-2 justify-center mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`text-sm sm:text-md px-2 sm:px-4 sm:py-2 rounded-full font-medium border transition cursor-pointer ${selectedCategory === cat
+                ? "bg-gray-900 text-white border-gray-900"
+                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                }`}
+            >
+              {cat}
+            </button>
           ))}
         </div>
       </section>
 
-      <Newsletter />
+      {/* Blogs List */}
+      <section className="pb-10 px-4 max-w-7xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {searchTerm || selectedCategory !== "All"
+              ? ""
+              : "Latest Blogs"}
+          </h2>
+        </div>
 
+        {filteredBlogs.length > 0 ? (
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredBlogs.map((blog) => (
+              <Link href={`/blogs/${blog.id}`} key={blog.id}>
+                <BlogCard
+                  title={blog.title}
+                  author={blog.author}
+                  readTime={blog.readTime}
+                  category={blog.category}
+                  date={blog.date}
+                  imageUrl={blog.imageUrl}
+                  excerpt={blog.excerpt}
+                />
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-600 mt-6">
+            No blogs found. Try a different search or category.
+          </p>
+        )}
+      </section>
+
+      {/* Newsletter Component */}
+      <div className="bg-gray-100 py-10">
+        <Newsletter />
+      </div>
     </div>
   );
 }

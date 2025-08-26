@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+::-webkit-scrollbar {
+    display: none;
+}
 
 /* Custom styles */
 @layer base {
