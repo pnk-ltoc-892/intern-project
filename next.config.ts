@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.pexels.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'insightai-public-images.s3.ap-south-1.amazonaws.com',
+      },
     ],
   },
   eslint: {

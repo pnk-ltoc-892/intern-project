@@ -303,7 +303,7 @@ export default function NavBar() {
     } as const;
 
     return (
-        <nav className="bg-white shadow-lg sticky top-0 z-50">
+        <nav className="bg-white shadow-lg sticky top-0 z-5000">
             {/* Main Navigation */}
             <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
                 <div className="flex justify-between items-center h-16">
