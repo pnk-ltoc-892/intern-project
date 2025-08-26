@@ -1,5 +1,5 @@
 'use client';
-
+import { Mail } from 'lucide-react';
 import React, { FC, useState, FormEvent } from 'react';
 
 // Success message shown on subscription
@@ -26,6 +26,7 @@ const SuccessMessage: FC = () => (
         </p>
     </div>
 );
+
 
 export const Newsletter: FC = () => {
     const [email, setEmail] = useState('');
@@ -61,58 +62,55 @@ export const Newsletter: FC = () => {
     }
 
     return (
-        <section className="bg-gray-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl bg-white p-6 sm:p-8 rounded-xl shadow">
-                <h2 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900">
-                    Stay in the loop with the latest industry news
-                </h2>
+        <section className="bg-white px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-2xl lg:max-w-3xl bg-gray-50 p-2 sm:p-4 rounded-2xl shadow-sm border-gray-200">
 
-                <form
-                    onSubmit={handleSubmit}
-                    className="mt-6 sm:mt-8 space-y-4 sm:space-y-6"
-                >
+                <div className='flex justify-center items-center'>
+                    <Mail className='w-12 h-12 text-gray-600' />
+                </div>
+                <h2 className="text-center font-semibold text-xl md:text-2xl text-gray-900 leading-tight">
+                    Subscribe to our Newsletter
+                </h2>
+                <p className="text-gray-400 leading-relaxed text-center">
+                    Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.
+                </p>
+
+                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                     {/* Email field */}
                     <div>
-                        <label
-                            htmlFor="newsletter-email"
-                            className="block text-sm sm:text-base font-medium text-gray-700"
-                        >
-                            Email*
-                        </label>
                         <input
                             id="newsletter-email"
                             type="email"
-                            placeholder="Corporate email address"
+                            placeholder="Enter your email address"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className={`mt-1 block w-full rounded-lg border px-3 py-2 sm:px-4 sm:py-3 text-gray-800 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 ${error ? 'border-red-500' : 'border-gray-300'
+                            className={`w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 ${error ? "border-red-500" : "border-gray-300"
                                 }`}
                         />
                     </div>
 
                     {/* Consent */}
-                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0">
+                    <div className="flex items-start space-x-3">
                         <input
                             id="newsletter-consent"
                             type="checkbox"
                             checked={consent}
                             onChange={(e) => setConsent(e.target.checked)}
-                            className="h-4 w-4 sm:h-5 sm:w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                            className="h-5 w-5 rounded border-gray-300 text-gray-900 focus:ring-gray-800"
                         />
                         <label
                             htmlFor="newsletter-consent"
-                            className="ml-0 sm:ml-3 text-sm sm:text-base text-gray-700"
+                            className="text-sm text-gray-700 leading-relaxed"
                         >
-                            I agree to receive updates and offers from InsightAI. Read our{' '}
+                            I agree to receive updates and offers. Read our{" "}
                             <a
                                 href="/privacy-policy"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-medium text-green-600 hover:underline"
+                                className="font-medium text-gray-900 underline hover:text-gray-700"
                             >
                                 Privacy Policy
-                            </a>{' '}
-                            to learn more.*
+                            </a>
                         </label>
                     </div>
 
@@ -124,9 +122,9 @@ export const Newsletter: FC = () => {
                         <button
                             type="submit"
                             disabled={!consent}
-                            className={`inline-flex items-center justify-center rounded-full px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-semibold text-white shadow transition ${consent
-                                    ? 'bg-gray-900 hover:bg-gray-800'
-                                    : 'bg-gray-400 cursor-not-allowed'
+                            className={`w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
+                                ? "bg-black hover:bg-gray-800"
+                                : "bg-gray-400 cursor-not-allowed"
                                 }`}
                         >
                             Subscribe
