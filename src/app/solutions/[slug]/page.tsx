@@ -129,7 +129,7 @@ export default function Solutions() {
                         Salient Features
                     </h2>
                 </div>
-                <div className='grid grid-cols-1 p-16 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 p-8 lg:p-16 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                     <AnimatedBackgroundGrid
                         className='rounded-lg bg-gray-200'
                         transition={{

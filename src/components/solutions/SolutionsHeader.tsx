@@ -15,7 +15,7 @@ const SolutionHeader: React.FC<SolutionHeaderProps> = ({ productHeader }) => {
     return (
         <div className="bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
             {/* Breadcrumb */}
-            <div className="container mx-auto px-4 py-6 text-sm text-gray-700 flex gap-2 font-medium">
+            <div className="container mx-auto px-4 py-6 text-sm text-gray-700 flex gap-2 font-medium flex-wrap">
                 <Link href="/" className="hover:underline">Home</Link>
                 <span>{'>'}</span>
                 <Link href="/solutions" className="hover:underline">Solutions</Link>
@@ -24,7 +24,7 @@ const SolutionHeader: React.FC<SolutionHeaderProps> = ({ productHeader }) => {
             </div>
 
             {/* Hero Section */}
-            <section className="container mx-auto px-4 pb-16">
+            <section className="px-4 sm:px-8 lg:px-12 py-8 md:py-12 lg:py-16 gap-8 lg:gap-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center min-h-[60vh]">
                     {/* Text Content */}
                     <div className="text-black text-left">

@@ -156,7 +156,7 @@ export default function NavBar() {
                     {
                         name: 'Careers',
                         description: 'Join our growing team',
-                        href: '/career',
+                        href: '/careers',
                     },
                 ]
             },
