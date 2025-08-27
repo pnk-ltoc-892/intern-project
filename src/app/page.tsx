@@ -6,7 +6,6 @@ import Card from '@/components/common/Card';
 import HeroSection from '@/components/home/HeroSection';
 import Features from '@/components/home/Features';
 import FAQSection from '@/components/home/FAQSection';
-// import InfiniteMovingCardsSection from '@/components/common/InfiniteMovingCardsSection';
 import TestimonialSection from '@/components/home/TestimonialSection';
 import TeamMemberSection from '@/components/common/TeamMemberSection';
 import RelationsSection from '@/components/home/RelationsSection';
@@ -41,22 +40,19 @@ export default function Home() {
 
   return (
     <div>
+
       {/* Main Hero Section */}
       <HeroSection />
 
 
-      {/* Infinite Sliding Cards Section */}
-      {/* // ! Optimize For Sliding Image Section */}
-      {/* <InfiniteMovingCardsSection /> */}
+      {/* Sliding Relations Section Marquee */}
+      <div className='px-4 lg:px-8'>
+        <h2 className="flex justify-center text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold tracking-tighter mt-5 py-1 px-4">
+          Our Relations
+        </h2>
+        <RelationsSection />
+      </div>
 
-      {/* Infinite Sliding Cards Section */}
-      {/* // ! Optimize For Sliding Image Section */}
-      <RelationsSection />
-
-
-      {/* Team Members Section */}
-      {/* // ! Optimize For Sliding Image Section */}
-      <TeamMemberSection />
 
       {/* How It Works Section */}
       <HowItWorks />
