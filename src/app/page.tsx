@@ -60,7 +60,7 @@ export default function Home() {
       {/* Integration Section */}
       <PluginIntegration />
 
-      {/* Feature Split Flex*/}
+      {/* Feature Sticky Scroll*/}
       <FeaturesFlex />
 
       {/* Testimonial Sections */}
