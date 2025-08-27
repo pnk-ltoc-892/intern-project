@@ -1,9 +1,7 @@
-// components/HowItWorks.jsx
 import {
     CloudArrowUpIcon,
     ChartBarIcon,
-    DocumentTextIcon,
-    ArrowRightIcon
+    DocumentTextIcon
 } from '@heroicons/react/24/outline'
 
 const steps = [
@@ -34,7 +32,7 @@ export default function HowItWorks() {
     return (
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
             <div className="max-w-3xl mx-auto text-center">
-                <span className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold uppercase rounded-full px-3 py-1 mb-4">
+                <span className="inline-block bg-gray-200 text-gray-800 text-sm font-semibold uppercase rounded-full px-3 py-1 mb-4">
                     How It Works
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -49,12 +47,12 @@ export default function HowItWorks() {
                 {steps.map((step, idx) => (
                     <div key={step.title} className="relative bg-white rounded-2xl shadow p-6 flex-1">
                         {/* Step badge */}
-                        <span className="absolute top-4 right-4 bg-gray-100 text-gray-800 text-xs font-semibold uppercase rounded px-2 py-1">
+                        <span className="absolute top-4 right-4 bg-gray-200 text-gray-800 text-xs font-semibold uppercase rounded px-2 py-1">
                             {step.badge}
                         </span>
 
                         {/* Icon */}
-                        <step.icon className="h-10 w-10 text-gray-600 mb-4" />
+                        <step.icon className="h-12 w-12 text-gray-600 mb-4" />
 
                         {/* Title */}
                         <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -63,13 +61,6 @@ export default function HowItWorks() {
                         <p className="text-gray-600 leading-relaxed">
                             {step.description}
                         </p>
-
-                        {/* Arrow (except after last) */}
-                        {idx < steps.length - 1 && (
-                            <div className="hidden md:flex absolute inset-y-0 right-[-2rem] w-8 items-center justify-center">
-                                <ArrowRightIcon className="h-6 w-6 text-gray-600" />
-                            </div>
-                        )}
                     </div>
                 ))}
             </div>
