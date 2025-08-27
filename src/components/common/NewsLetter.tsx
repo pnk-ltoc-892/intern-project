@@ -1,5 +1,5 @@
 'use client';
-import { Mail } from 'lucide-react';
+import { Mail, Send } from 'lucide-react';
 import React, { FC, useState, FormEvent } from 'react';
 
 // Success message shown on subscription
@@ -63,10 +63,10 @@ export const Newsletter: FC = () => {
 
     return (
         <section className="bg-white px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto w-full max-w-2xl lg:max-w-3xl bg-gray-50 p-2 sm:p-4 rounded-2xl shadow-sm border-gray-200">
+            <div className="mx-auto w-full max-w-2xl lg:max-w-3xl p-2 sm:p-4 rounded-2xl">
 
                 <div className='flex justify-center items-center'>
-                    <Mail className='w-12 h-12 text-gray-600' />
+                    <Mail className='w-6 h-6 text-gray-600' />
                 </div>
                 <h2 className="text-center font-semibold text-xl md:text-2xl text-gray-900 leading-tight">
                     Subscribe to our Newsletter
@@ -77,20 +77,30 @@ export const Newsletter: FC = () => {
 
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                     {/* Email field */}
-                    <div>
+                    <div className='flex gap-2 justify-center items-center p-1 pl-0'>
                         <input
                             id="newsletter-email"
                             type="email"
                             placeholder="Enter your email address"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className={`w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 ${error ? "border-red-500" : "border-gray-300"
+                            className={`w-full rounded-sm border p-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-800 ${error ? "border-red-500" : "border-gray-300"
                                 }`}
                         />
+                        <button
+                            type="submit"
+                            disabled={!consent}
+                            className={`w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
+                                ? "bg-black hover:bg-gray-800"
+                                : "bg-gray-400 cursor-not-allowed"
+                                }`}
+                        >
+                            <Send className="h-4 w-4" />
+                        </button>
                     </div>
 
                     {/* Consent */}
-                    <div className="flex items-start space-x-3">
+                    <div className="flex justify-center items-center space-x-3">
                         <input
                             id="newsletter-consent"
                             type="checkbox"
@@ -116,20 +126,6 @@ export const Newsletter: FC = () => {
 
                     {/* Error */}
                     {error && <p className="text-sm text-red-600">{error}</p>}
-
-                    {/* Subscribe button */}
-                    <div className="text-center">
-                        <button
-                            type="submit"
-                            disabled={!consent}
-                            className={`w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
-                                ? "bg-black hover:bg-gray-800"
-                                : "bg-gray-400 cursor-not-allowed"
-                                }`}
-                        >
-                            Subscribe
-                        </button>
-                    </div>
                 </form>
             </div>
         </section>
