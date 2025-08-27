@@ -42,7 +42,7 @@ export const StickyBanner = ({
                 animate={{
                     scale: 1,
                 }}
-                className="absolute top-1/2 right-12 -translate-y-1/2 cursor-pointer"
+                className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer"
                 onClick={() => setOpen(!open)}
             >
                 <CloseIcon className="h-6 w-6 text-white" />
