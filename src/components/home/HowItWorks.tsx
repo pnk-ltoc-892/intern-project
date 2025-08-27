@@ -38,7 +38,7 @@ export default function HowItWorks() {
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                     Seamless Integration
                 </h2>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-lg">
                     Effortless integration for advanced analytics. No technology expertise required for a seamless experience.
                 </p>
             </div>

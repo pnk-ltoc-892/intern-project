@@ -24,3 +24,25 @@ export const relationsLogo = [
         alt: "Prada logo",
     },
 ];
+
+
+export const pluginsIntegration = [
+    {
+        name: 'Tally',
+        logo: '/image.jpeg',
+        description:
+            'Seamlessly integrate with Tally to streamline data management, automate bookkeeping tasks, and enhance financial analytics for more efficient and accurate decision-making.',
+    },
+    {
+        name: 'Zoho',
+        logo: '/image.jpeg',
+        description:
+            'Effortlessly connect with Zoho to gain enhanced financial insights, automate routine processes, and improve overall efficiency in managing your financial data.',
+    },
+    {
+        name: 'FreshBooks',
+        logo: '/image.jpeg',
+        description:
+            'Integrate with FreshBooks to simplify bookkeeping, automate data entry, and ensure accurate and comprehensive financial analysis for better business insights.',
+    },
+]
