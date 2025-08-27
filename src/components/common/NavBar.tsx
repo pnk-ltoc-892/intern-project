@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Menu, X} from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation.js';
 import Link from 'next/link.js';
@@ -43,31 +43,21 @@ export default function NavBar() {
                         name: 'Identity Verification (KYC)',
                         description: 'Onboard new users remotely',
                         href: '/solutions/solution1',
-                        icon: '🔍'
                     },
                     {
                         name: 'Business Onboarding (KYB)',
                         description: 'Onboard business clients remotely',
                         href: '/solutions#kyb',
-                        icon: '🏢'
                     },
                     {
                         name: 'Customer Data Platform (CDP)',
                         description: 'A centralized hub for managing customer data',
                         href: '/solutions#cdp',
-                        icon: '📊'
                     },
                     {
                         name: 'Transaction Monitoring (KYT)',
                         description: 'Transaction monitoring from our partners',
                         href: '/solutions#kyt',
-                        icon: '💳'
-                    },
-                    {
-                        name: 'Due Diligence',
-                        description: 'PEP, sanctions and adverse media checks',
-                        href: '/solutions#due-diligence',
-                        icon: '🔒'
                     }
                 ]
             },
@@ -78,100 +68,74 @@ export default function NavBar() {
                         name: 'OnAge',
                         description: 'Reusable Age Verification',
                         href: '/solutions#onage',
-                        icon: '🎂'
                     },
                     {
                         name: 'Age Verification Software',
                         description: 'Document-free age authentication',
                         href: '/solutions#age-verification',
-                        icon: '✅'
                     },
                     {
                         name: 'AML Software',
                         description: 'Cover all AML compliance needs',
                         href: '/solutions#aml',
-                        icon: '🛡️'
                     },
                     {
                         name: 'Authentication Solutions',
                         description: 'Streamline returning user\'s journeys',
                         href: '/solutions#auth',
-                        icon: '🔐'
-                    },
-                    {
-                        name: 'Virtual Branch',
-                        description: 'Interact with clients remotely',
-                        href: '/solutions#virtual-branch',
-                        icon: '🏦'
                     }
                 ]
             }
         ]
     } as const;
 
-    const resourcesMenu = {
-        title: 'Resources',
+
+    const blogsMenu = {
+        title: "Blogs",
         sections: [
             {
-                title: 'Learn',
+                title: "Latest Blogs",
                 items: [
                     {
-                        name: 'Blog',
-                        description: 'Latest insights and updates',
-                        href: '/blogs',
-                        icon: '📝'
+                        name: "Scaling Microservices",
+                        description: "Best practices for managing distributed systems at scale",
+                        href: "/blogs/scaling-microservices",
                     },
                     {
-                        name: 'Case Studies',
-                        description: 'Success stories from our clients',
-                        href: '/case-study',
-                        icon: '📈'
+                        name: "Introduction to Zero Trust Security",
+                        description: "Why perimeter security is outdated and how Zero Trust works",
+                        href: "/blogs/zero-trust-security",
                     },
                     {
-                        name: 'Documentation',
-                        description: 'Technical guides and API docs',
-                        href: '/docs',
-                        icon: '📚'
+                        name: "GraphQL vs REST",
+                        description: "Choosing the right API strategy for your application",
+                        href: "/blogs/graphql-vs-rest",
                     },
-                    {
-                        name: 'Webinars',
-                        description: 'Educational sessions and demos',
-                        href: '/webinars',
-                        icon: '🎥'
-                    }
-                ]
+                ],
             },
             {
-                title: 'Support',
+                title: "Top Blogs",
                 items: [
                     {
-                        name: 'Help Center',
-                        description: 'Find answers to common questions',
-                        href: '/help',
-                        icon: '❓'
+                        name: "CI/CD for Modern Applications",
+                        description: "Automating deployments and testing with CI/CD pipelines",
+                        href: "/blogs/ci-cd-modern-apps",
                     },
                     {
-                        name: 'API Reference',
-                        description: 'Complete API documentation',
-                        href: '/api-docs',
-                        icon: '⚡'
+                        name: "Optimizing React Performance",
+                        description: "Techniques to make your React apps faster and smoother",
+                        href: "/blogs/react-performance",
                     },
                     {
-                        name: 'Developer Tools',
-                        description: 'SDKs and integration guides',
-                        href: '/developers',
-                        icon: '🛠️'
+                        name: "Data Privacy Regulations",
+                        description: "Understanding GDPR, CCPA, and global compliance requirements",
+                        href: "/blogs/data-privacy",
                     },
-                    {
-                        name: 'Status Page',
-                        description: 'System status and uptime',
-                        href: '/status',
-                        icon: '🟢'
-                    }
-                ]
-            }
-        ]
-    };
+                ],
+            },
+        ],
+    } as const
+
 
     const companyMenu = {
         title: 'Company',
@@ -183,26 +147,17 @@ export default function NavBar() {
                         name: 'About Us',
                         description: 'Our mission and values',
                         href: '/about',
-                        icon: '🏢'
                     },
                     {
-                        name: 'Leadership Team',
-                        description: 'Meet our executives',
-                        href: '/team',
-                        icon: '👥'
+                        name: 'Contact Us',
+                        description: 'Get in touch with us',
+                        href: '/contact',
                     },
                     {
                         name: 'Careers',
                         description: 'Join our growing team',
                         href: '/career',
-                        icon: '💼'
                     },
-                    {
-                        name: 'News & Press',
-                        description: 'Latest company news',
-                        href: '/news',
-                        icon: '📰'
-                    }
                 ]
             },
             {
@@ -211,47 +166,32 @@ export default function NavBar() {
                     {
                         name: 'Privacy Policy',
                         description: 'How we protect your data',
-                        href: '/privacy',
-                        icon: '🔒'
+                        href: '/privacy-policy',
                     },
                     {
                         name: 'Terms of Service',
                         description: 'Our terms and conditions',
-                        href: '/terms',
-                        icon: '📋'
+                        href: '/terms-conditions',
                     },
                     {
                         name: 'Trust Center',
                         description: 'Security and compliance',
                         href: '/trust-center',
-                        icon: '🛡️'
                     },
-                    {
-                        name: 'Cookie Policy',
-                        description: 'Cookie usage information',
-                        href: '/cookies-info',
-                        icon: '🍪'
-                    }
                 ]
             }
         ]
     } as const;
 
+
     const navigationItems = [
         { name: 'Home', href: '/', hasDropdown: false },
         { name: 'Solutions', href: '/solutions', hasDropdown: true, menu: solutionsMenu },
-        // { name: 'Resources', href: '#', hasDropdown: true, menu: resourcesMenu },
-        // { name: 'Company', href: '#', hasDropdown: true, menu: companyMenu },
-        { name: 'Careers', href: '/careers', hasDropdown: false },
-        { name: 'Blogs', href: '/blogs', hasDropdown: false },
-        { name: 'About', href: '/about', hasDropdown: false },
-        { name: 'Contact', href: '/contact', hasDropdown: false },
-        { name: 'Privacy Policy', href: '/privacy-policy', hasDropdown: false },
-        { name: 'Terms & Conditions', href: '/terms-conditions', hasDropdown: false },
-        { name: 'Trust Center', href: '/trust-center', hasDropdown: false }
+        { name: 'Blogs', href: '/blogs', hasDropdown: true, menu: blogsMenu },
+        { name: 'Company', href: '#', hasDropdown: true, menu: companyMenu },
     ];
 
-    const isActivePage = (href : string) => {
+    const isActivePage = (href: string) => {
         if (href === '/') return pathname === '/';
         return pathname.startsWith(href);
     };
@@ -351,7 +291,7 @@ export default function NavBar() {
                                         {item.hasDropdown && activeDropdown === item.name && (
                                             <motion.div
                                                 className="absolute top-full left-0 mt-2 w-screen max-w-4xl bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden"
-                                                style={{ left: '-200px' }}
+                                                style={{ left: '-400px' }}
                                                 variants={dropdownVariants}
                                                 initial="hidden"
                                                 animate="visible"
@@ -376,7 +316,6 @@ export default function NavBar() {
                                                                                 className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 group"
                                                                                 onClick={() => setActiveDropdown(null)}
                                                                             >
-                                                                                <span className="text-2xl">{menuItem.icon}</span>
                                                                                 <div>
                                                                                     <div className="font-medium text-gray-900 group-hover:text-primary transition-colors">
                                                                                         {menuItem.name}
@@ -401,14 +340,11 @@ export default function NavBar() {
                         </div>
                     </div>
 
-                    {/* <div className="flex items-center">
-                        <Link href="/contact" className="px-6 sm:px-8 py-2 flex items-center justify-center bg-black text-white rounded-full hover:bg-slate-800">
-                            Talk to sales
+                    <div className="hidden lg:block">
+                        <Link href="/contact" className="px-6 sm:px-8 py-2 flex items-center justify-center bg-black text-white border border-gray-500 rounded-full hover:bg-gray-100 hover:text-black transition-all duration-300">
+                            Book a Demo
                         </Link>
-                        <Link href="/demo" className="px-6 sm:px-8 py-2 flex items-center justify-center border border-gray-500 rounded-full hover:bg-gray-100">
-                            Try for free
-                        </Link>
-                    </div> */}
+                    </div>
 
                     {/* Mobile menu button */}
                     <div className="lg:hidden">
@@ -423,11 +359,12 @@ export default function NavBar() {
                 </div>
             </div>
 
+
             {/* Mobile Navigation */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto"
+                        className="lg:hidden fixed inset-0 top-16 bg-white z-1000 overflow-y-auto"
                         variants={mobileMenuVariants}
                         initial="hidden"
                         animate="visible"
@@ -473,27 +410,16 @@ export default function NavBar() {
                             ))}
 
                             {/* Mobile CTA Buttons */}
-                            <div className="pt-4 border-t border-gray-200 space-y-2">
-                                <Link
-                                    href="/contact"
-                                    className="block w-full text-center bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    Talk to sales
-                                </Link>
-                                <Link
-                                    href="/demo"
-                                    className="block w-full text-center border border-primary text-primary px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    Try for free
+                            <div className="max-w-xs mx-auto">
+                                <Link href="/contact" className="px-6 sm:px-8 py-2 flex items-center justify-center bg-black text-white border border-gray-500 rounded-full hover:bg-gray-100 hover:text-black transition-all duration-300">
+                                    Book a Demo
                                 </Link>
                             </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-            
+
         </nav>
     );
 };

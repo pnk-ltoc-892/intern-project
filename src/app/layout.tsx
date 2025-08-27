@@ -27,7 +27,7 @@ export default function RootLayout({
         <CookiePanel />
 
         {/* Top Banner Component */}
-        <Banner />
+        {/* <Banner /> */}
 
         {/* Navigation Bar */}
         <NavBar />
