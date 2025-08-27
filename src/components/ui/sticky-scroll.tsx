@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { useMotionValueEvent, useScroll, motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -18,41 +18,31 @@ export const StickyScroll = ({
     contentClassName?: string;
 }) => {
     const [activeCard, setActiveCard] = useState(0);
-    const ref = useRef<any>(null);
+    const ref = useRef<HTMLDivElement>(null);
+
     const { scrollYProgress } = useScroll({
-        container: ref,
-        offset: ["start start", "end start"],
+        target: ref,
+        offset: ["start start", "end end"],
     });
+
     const cardLength = content.length;
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        const cardsBreakpoints = content.map((_, index) => index / cardLength);
-        const closestBreakpointIndex = cardsBreakpoints.reduce(
-            (acc, breakpoint, index) => {
-                const distance = Math.abs(latest - breakpoint);
-                if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-                    return index;
-                }
-                return acc;
-            },
-            0
-        );
-        setActiveCard(closestBreakpointIndex);
+        const index = Math.min(cardLength - 1, Math.floor(latest * cardLength));
+        setActiveCard(index);
     });
 
     return (
-        <motion.div
-            className="bg-gray-50 h-[30rem] overflow-auto flex justify-center gap-2 relative lg:p-10"
-            ref={ref}
-        >
-            {/* Left scrollable content */}
-            <div className="relative flex items-start">
-                <div className="w-full px-4 lg:px-6 ">
+        <section ref={ref} className="relative w-full bg-gray-50 py-20">
+            <div className="container mx-auto flex flex-col lg:flex-row gap-12">
+                {/* Left content */}
+                <div className="flex-1 space-y-24 px-4 lg:px-6">
                     {content.map((item, index) => (
-                        <div key={item.title + index} className="my-12">
+                        <div key={item.title + index} className="scroll-mt-20">
                             <motion.h2
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                                animate={{ opacity: activeCard === index ? 1 : 0.4 }}
+                                transition={{ duration: 0.4 }}
                                 className="text-2xl lg:text-3xl font-bold text-black"
                             >
                                 {item.title}
@@ -60,10 +50,11 @@ export const StickyScroll = ({
 
                             <motion.div
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+                                animate={{ opacity: activeCard === index ? 1 : 0.4 }}
+                                transition={{ duration: 0.4 }}
                                 className="mt-6"
                             >
-                                <ul className="space-y-2 list-disc list-inside text-bgray-800">
+                                <ul className="space-y-2 list-disc list-inside text-gray-700">
                                     {item.description.map((point, i) => (
                                         <li
                                             key={i}
@@ -76,38 +67,37 @@ export const StickyScroll = ({
                             </motion.div>
                         </div>
                     ))}
-                    <div className="h-40" />
+                </div>
+
+                {/* Right sticky panel */}
+                <div
+                    className={cn(
+                        "hidden lg:flex flex-1 sticky top-28 h-[500px] rounded-2xl shadow-lg overflow-hidden items-center justify-center bg-white",
+                        contentClassName
+                    )}
+                >
+                    {content[activeCard].content ? (
+                        content[activeCard].content
+                    ) : (
+                        <motion.div
+                            key={content[activeCard].imageSrc}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            className="w-full h-full flex items-center justify-center"
+                        >
+                            <Image
+                                src={content[activeCard].imageSrc}
+                                alt={content[activeCard].imageAlt}
+                                width={500}
+                                height={500}
+                                className="object-cover w-full h-full"
+                            />
+                        </motion.div>
+                    )}
                 </div>
             </div>
-
-            {/* Right sticky panel */}
-            <div
-                className={cn(
-                    "hidden lg:flex w-[50%] rounded-md sticky top-0 items-center justify-center overflow-hidden",
-                    contentClassName
-                )}
-            >
-                {content[activeCard].content ? (
-                    content[activeCard].content
-                ) : (
-                    <motion.div
-                        key={content[activeCard].imageSrc} // force re-render animation on change
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.75, ease: "easeInOut" }}
-                        className="w-full h-full flex items-center justify-center"
-                    >
-                        <Image
-                            src={content[activeCard].imageSrc}
-                            alt={content[activeCard].imageAlt}
-                            width={400}
-                            height={400}
-                            className="object-cover w-full h-full"
-                        />
-                    </motion.div>
-                )}
-            </div>
-        </motion.div>
+        </section>
     );
 };

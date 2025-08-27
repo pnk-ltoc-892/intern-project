@@ -15,11 +15,9 @@ const FeaturesFlex = () => {
                         Four Reasons Why InsightAI is Perfectly Optimized for Your Needs
                     </h2>
                 </div>
-
             </section>
-            <div>
-                <FeaturesStickyScroll />
-            </div>
+            {/* Parallax Scroll */}
+            <FeaturesStickyScroll />
         </>
     )
 }
