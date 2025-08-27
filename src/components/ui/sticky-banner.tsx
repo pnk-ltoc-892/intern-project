@@ -1,27 +1,16 @@
 "use client";
 import React, { SVGProps, useState } from "react";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const StickyBanner = ({
     className,
     children,
-    hideOnScroll = false,
 }: {
     className?: string;
     children: React.ReactNode;
-    hideOnScroll?: boolean;
 }) => {
     const [open, setOpen] = useState(true);
-    const { scrollY } = useScroll();
-
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        if (hideOnScroll && latest > 40) {
-            setOpen(false);
-        } else {
-            setOpen(true);
-        }
-    });
 
     return (
         <motion.div
@@ -30,12 +19,10 @@ export const StickyBanner = ({
                 className,
             )}
             initial={{
-                y: -100,
-                opacity: 0,
+                position: "hidden"
             }}
             animate={{
-                y: open ? 0 : -100,
-                opacity: open ? 1 : 0,
+                position: open ? "block" : "hidden",
                 height: open ? "auto" : 0,
             }}
             transition={{
@@ -55,10 +42,10 @@ export const StickyBanner = ({
                 animate={{
                     scale: 1,
                 }}
-                className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
+                className="absolute top-1/2 right-12 -translate-y-1/2 cursor-pointer"
                 onClick={() => setOpen(!open)}
             >
-                <CloseIcon className="h-5 w-5 text-white" />
+                <CloseIcon className="h-6 w-6 text-white" />
             </motion.button>
         </motion.div>
     );

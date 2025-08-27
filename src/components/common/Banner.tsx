@@ -7,7 +7,6 @@ export default function Banner() {
     <div className="relative flex w-full flex-col overflow-y-auto">
       <StickyBanner 
             className="bg-gradient-to-t from-black via-slate-950 to-black"
-            hideOnScroll={true}
       >
         <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
           {bannerText.message}.{" "}
