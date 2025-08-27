@@ -148,3 +148,61 @@ export const testimonials = [
             "The components are well documented and easy to customize. The code quality is top-notch and the support is excellent. I'm very happy with my purchase.",
     },
 ];
+
+export const industries = [
+    {
+        title: "Banks",
+        description:
+            "Enhance security with fraud detection, AML solutions, and document intelligence. Elevate customer service with GenAI-powered solutions.",
+        src:
+            "https://images.pexels.com/photos/376006/pexels-photo-376006.jpeg", // Pexels: modern banking environment
+    },
+    {
+        title: "NBFCs",
+        description:
+            "Improve bank statement analysis and fraud detection. Utilize document intelligence and GenAI-powered customer service for seamless operations.",
+        src:
+            "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg", // Pexels: finance/technology focused
+    },
+    {
+        title: "Accounting Firms",
+        description:
+            "Streamline accounting reconciliation and financial data analytics. Use GenAI bots for advanced customer service and comprehensive analysis.",
+        src:
+            "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg", // Pexels: accounting, analytics, data
+    },
+    {
+        title: "Insurance Companies",
+        description:
+            "Boost customer service with product recommendation bots. Enhance financial document analytics for better decision-making.",
+        src:
+            "https://images.pexels.com/photos/3663316/pexels-photo-3663316.jpeg", // Pexels: insurance office or tech
+    },
+];
+
+export const focusCards = [
+    {
+        title: "Forest Adventure",
+        src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+        title: "Valley of life",
+        src: "https://images.unsplash.com/photo-1600271772470-bd22a42787b3?q=80&w=3072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+        title: "Sala behta hi jayega",
+        src: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=3070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+        title: "Camping is for pros",
+        src: "https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+        title: "The road not taken",
+        src: "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+        title: "The First Rule",
+        src: "https://assets.aceternity.com/the-first-rule.png",
+    },
+];

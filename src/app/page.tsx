@@ -9,11 +9,11 @@ import { Newsletter } from '@/components/common/NewsLetter';
 import HowItWorks from '@/components/home/HowItWorks';
 import PluginIntegration from '@/components/home/PluginIntergration';
 import FeaturesFlex from '@/components/home/FeaturesFlex';
+import IndustriesSection from '@/components/home/IndustriesSection';
 
 
 export default function Home() {
-
-
+  
   return (
     <div>
 
@@ -28,6 +28,10 @@ export default function Home() {
         </h2>
         <RelationsSection />
       </div>
+
+
+      {/* Industries Section */}
+      <IndustriesSection />
 
 
       {/* How It Works Section */}
