@@ -66,7 +66,7 @@ export const Newsletter: FC = () => {
             <div className="mx-auto w-full max-w-2xl lg:max-w-3xl p-2 sm:p-4 rounded-2xl">
 
                 <div className='flex justify-center items-center'>
-                    <Mail className='w-6 h-6 text-gray-600' />
+                    <Mail className='w-8 h-8 text-gray-600' />
                 </div>
                 <h2 className="text-center font-semibold text-xl md:text-2xl text-gray-900 leading-tight">
                     Subscribe to our Newsletter
@@ -90,7 +90,7 @@ export const Newsletter: FC = () => {
                         <button
                             type="submit"
                             disabled={!consent}
-                            className={`w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
+                            className={`w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
                                 ? "bg-black hover:bg-gray-800"
                                 : "bg-gray-400 cursor-not-allowed"
                                 }`}

@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { socialLinks } from '@/data/Footer';
 import { Send } from 'lucide-react';
+import SocialLinkBar from '../footer/SocialLinkBar';
 
 
 const Footer = () => {
@@ -29,7 +29,11 @@ const Footer = () => {
     <footer className="">
       <div className="px-8 sm:px-12 lg:px-16 pt-8 md:pt-12 lg:pt-16">
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> */}
-        <div className="flex justify-evenly items-center flex-wrap gap-12">
+        <div className="flex justify-around items-center flex-wrap gap-12">
+
+          <div className="block lg:hidden">
+            <SocialLinkBar />
+          </div>
 
           {/* NewsLetter */}
           <div className="">
@@ -83,22 +87,8 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
-            <div className="mb-6 flex space-x-4">
-              {socialLinks.map(({ name, href, icon: Icon }) => (
-                <Link
-                  key={name}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center rounded-full border border-gray-300 p-3 hover:bg-gray-100 transition"
-                >
-                  <Icon className="h-4 w-4" />
-                  <span className="sr-only">{name}</span>
-                </Link>
-              ))}
-            </div>
+          <div className="hidden lg:block">
+            <SocialLinkBar />
           </div>
         </div>
 

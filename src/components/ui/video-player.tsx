@@ -78,16 +78,16 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
 
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-white/30">
-                            <Play className="h-8 w-8 fill-white text-white" />
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-white/30">
+                            <Play className="sm:h-6 sm:w-6 fill-white text-white" />
                         </div>
                     </div>
 
                     {/* Title and Description */}
                     <div className="absolute bottom-0 left-0 p-6">
-                        <h3 className="text-2xl font-bold text-white">{title}</h3>
+                        <h3 className="hidden sm:block text-2xl font-bold text-white">{title}</h3>
                         {description && (
-                            <p className="mt-1 text-sm text-white/80">{description}</p>
+                            <p className="hidden sm:block mt-1 text-sm text-white/80">{description}</p>
                         )}
                     </div>
                 </div>
