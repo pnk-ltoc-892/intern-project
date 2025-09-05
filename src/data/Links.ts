@@ -1,0 +1,1 @@
+export const demoLink = "https://calendly.com/akash-insightai/30min?month=2025-09"

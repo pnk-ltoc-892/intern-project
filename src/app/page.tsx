@@ -51,7 +51,6 @@ export default function Home() {
       {/* // ! Optimize For Sliding Image Section */}
       <Newsletter />
 
-
       {/* FAQ Section */}
       <FAQSection />
     </div>
