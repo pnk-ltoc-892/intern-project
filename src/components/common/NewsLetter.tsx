@@ -62,71 +62,73 @@ export const Newsletter: FC = () => {
     }
 
     return (
-        <section className="bg-gray-50 container-wrapper padding-wrapper-y">
-            <div className="mx-auto w-full max-w-2xl lg:max-w-3xl p-2 sm:p-4 rounded-2xl">
+        <section className="bg-gray-50">
+            <div className='container-wrapper padding-wrapper-y'>
+                <div className="mx-auto w-full max-w-2xl lg:max-w-3xl p-2 sm:p-4 rounded-2xl">
 
-                <div className='flex justify-center items-center'>
-                    <Mail className='w-8 h-8 text-gray-600' />
-                </div>
-                <h2 className="text-center font-semibold text-xl md:text-2xl text-gray-900 leading-tight">
-                    Subscribe to our Newsletter
-                </h2>
-                <p className="text-gray-400 leading-relaxed text-center">
-                    Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.
-                </p>
-
-                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                    {/* Email field */}
-                    <div className='flex gap-2 justify-center items-center p-1 pl-0'>
-                        <input
-                            id="newsletter-email"
-                            type="email"
-                            placeholder="Enter your email address"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            className={`w-full rounded-sm border p-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-800 ${error ? "border-red-500" : "border-gray-300"
-                                }`}
-                        />
-                        <button
-                            type="submit"
-                            disabled={!consent}
-                            className={`w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
-                                ? "bg-black hover:bg-gray-800"
-                                : "bg-gray-400 cursor-not-allowed"
-                                }`}
-                        >
-                            <Send className="h-4 w-4" />
-                        </button>
+                    <div className='flex justify-center items-center'>
+                        <Mail className='w-8 h-8 text-gray-600' />
                     </div>
+                    <h2 className="text-center font-semibold text-xl md:text-2xl text-gray-900 leading-tight">
+                        Subscribe to our Newsletter
+                    </h2>
+                    <p className="text-gray-400 leading-relaxed text-center">
+                        Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.
+                    </p>
 
-                    {/* Consent */}
-                    <div className="flex justify-center items-center space-x-3">
-                        <input
-                            id="newsletter-consent"
-                            type="checkbox"
-                            checked={consent}
-                            onChange={(e) => setConsent(e.target.checked)}
-                            className="h-5 w-5 rounded border-gray-300 text-gray-900 focus:ring-gray-800"
-                        />
-                        <label
-                            htmlFor="newsletter-consent"
-                            className="text-sm text-gray-700 leading-relaxed"
-                        >
-                            I agree to receive updates and offers. Read our{" "}
-                            <a
-                                href="/privacy-policy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-medium text-gray-900 underline hover:text-gray-700"
+                    <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                        {/* Email field */}
+                        <div className='flex gap-2 justify-center items-center p-1 pl-0'>
+                            <input
+                                id="newsletter-email"
+                                type="email"
+                                placeholder="Enter your email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className={`w-full rounded-sm border p-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-800 ${error ? "border-red-500" : "border-gray-300"
+                                    }`}
+                            />
+                            <button
+                                type="submit"
+                                disabled={!consent}
+                                className={`w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold text-white shadow-sm transition ${consent
+                                    ? "bg-black hover:bg-gray-800"
+                                    : "bg-gray-400 cursor-not-allowed"
+                                    }`}
                             >
-                                Privacy Policy
-                            </a>
-                        </label>
-                    </div>
+                                <Send className="h-4 w-4" />
+                            </button>
+                        </div>
 
-                    {/* Error */}
-                    {error && <p className="text-sm text-red-600">{error}</p>}
-                </form>
+                        {/* Consent */}
+                        <div className="flex justify-center items-center space-x-3">
+                            <input
+                                id="newsletter-consent"
+                                type="checkbox"
+                                checked={consent}
+                                onChange={(e) => setConsent(e.target.checked)}
+                                className="h-5 w-5 rounded border-gray-300 text-gray-900 focus:ring-gray-800"
+                            />
+                            <label
+                                htmlFor="newsletter-consent"
+                                className="text-sm text-gray-700 leading-relaxed"
+                            >
+                                I agree to receive updates and offers. Read our{" "}
+                                <a
+                                    href="/privacy-policy"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-gray-900 underline hover:text-gray-700"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </label>
+                        </div>
+
+                        {/* Error */}
+                        {error && <p className="text-sm text-red-600">{error}</p>}
+                    </form>
+                </div>
             </div>
         </section>
     );

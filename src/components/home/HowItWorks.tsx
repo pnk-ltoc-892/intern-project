@@ -30,39 +30,42 @@ const steps = [
 
 export default function HowItWorks() {
     return (
-        <section className="container-wrapper padding-wrapper-y bg-gray-50">
-            <div className="max-w-3xl mx-auto text-center">
-                <span className="inline-block bg-gray-200 text-gray-800 text-sm font-semibold uppercase rounded-full px-3 py-1 mb-4">
-                    How It Works
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                    Seamless Integration
-                </h2>
-                <p className="text-gray-700 text-lg">
-                    Effortless integration for advanced analytics. No technology expertise required for a seamless experience.
-                </p>
-            </div>
+        <section className='bg-gray-50'>
 
-            <div className="mt-12 flex flex-col md:flex-row items-stretch justify-center space-y-6 md:space-y-0 md:space-x-6 max-w-5xl mx-auto">
-                {steps.map((step, idx) => (
-                    <div key={step.title} className="relative bg-white rounded-2xl shadow p-6 flex-1">
-                        {/* Step badge */}
-                        <span className="absolute top-4 right-4 bg-gray-200 text-gray-800 text-xs font-semibold uppercase rounded px-2 py-1">
-                            {step.badge}
-                        </span>
+            <div className="container-wrapper padding-wrapper-y">
+                <div className="max-w-3xl mx-auto text-center">
+                    <span className="inline-block bg-gray-200 text-gray-800 text-sm font-semibold uppercase rounded-full px-3 py-1 mb-4">
+                        How It Works
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                        Seamless Integration
+                    </h2>
+                    <p className="text-gray-700 text-lg">
+                        Effortless integration for advanced analytics. No technology expertise required for a seamless experience.
+                    </p>
+                </div>
 
-                        {/* Icon */}
-                        <step.icon className="h-12 w-12 text-gray-600 mb-4" />
+                <div className="mt-12 flex flex-col md:flex-row items-stretch justify-center space-y-6 md:space-y-0 md:space-x-6 max-w-5xl mx-auto">
+                    {steps.map((step, idx) => (
+                        <div key={step.title} className="relative bg-white rounded-2xl shadow p-6 flex-1">
+                            {/* Step badge */}
+                            <span className="absolute top-4 right-4 bg-gray-200 text-gray-800 text-xs font-semibold uppercase rounded px-2 py-1">
+                                {step.badge}
+                            </span>
 
-                        {/* Title */}
-                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                            {/* Icon */}
+                            <step.icon className="h-12 w-12 text-gray-600 mb-4" />
 
-                        {/* Description */}
-                        <p className="text-gray-600 leading-relaxed">
-                            {step.description}
-                        </p>
-                    </div>
-                ))}
+                            {/* Title */}
+                            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+
+                            {/* Description */}
+                            <p className="text-gray-600 leading-relaxed">
+                                {step.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )

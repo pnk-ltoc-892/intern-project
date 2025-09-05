@@ -32,54 +32,54 @@ const FAQSection = () => {
   const toggle = (idx: number) => setOpenIndex(idx === openIndex ? null : idx);
 
   return (
-    <section className="container-wrapper padding-wrapper-y bg-gray-100">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        {/* Title + Subtitle */}
-        <div className="text-center py-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Frequently Asked Questions
-          </h2>
-          <p className="mt-3 text-sm lg:text-lg text-gray-600 max-w-2xl mx-auto">
-            Answers to common questions about InsightAI, our platform, and how we
-            help teams stay compliant and secure.
-          </p>
+    <section className="bg-gray-100">
+      <div className="container-wrapper padding-wrapper-y">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          {/* Title + Subtitle */}
+          <div className="text-center py-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-3 text-sm lg:text-lg text-gray-600 max-w-2xl mx-auto">
+              Answers to common questions about InsightAI, our platform, and how we
+              help teams stay compliant and secure.
+            </p>
+          </div>
+
+          {/* FAQ List */}
+          <ul className="divide-y divide-gray-300">
+            {faqs.map((item, idx) => {
+              const isOpen = idx === openIndex;
+              return (
+                <li key={item.question}>
+                  <button
+                    onClick={() => toggle(idx)}
+                    className="flex w-full items-center justify-between py-5 text-left cursor-pointer"
+                  >
+                    <span className="text-base sm:text-lg font-medium text-gray-900">
+                      {item.question}
+                    </span>
+
+                    <ChevronDown
+                      className={`h-6 w-6 shrink-0 text-gray-500 transition-transform duration-500 ${isOpen ? "rotate-180" : ""
+                        }`}
+                    />
+                  </button>
+
+                  {/* Animated Answer */}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                  >
+                    <p className="pb-5 pl-1 pr-8 text-gray-700 text-sm sm:text-base leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-
-        {/* FAQ List */}
-        <ul className="divide-y divide-gray-300">
-          {faqs.map((item, idx) => {
-            const isOpen = idx === openIndex;
-            return (
-              <li key={item.question}>
-                <button
-                  onClick={() => toggle(idx)}
-                  className="flex w-full items-center justify-between py-5 text-left cursor-pointer"
-                >
-                  <span className="text-base sm:text-lg font-medium text-gray-900">
-                    {item.question}
-                  </span>
-
-                  <ChevronDown
-                    className={`h-6 w-6 shrink-0 text-gray-500 transition-transform duration-500 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {/* Animated Answer */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="pb-5 pl-1 pr-8 text-gray-700 text-sm sm:text-base leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </section>
   );
