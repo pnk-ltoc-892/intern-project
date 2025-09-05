@@ -1,13 +1,11 @@
 'use client'
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Send } from 'lucide-react';
-import SocialLinkBar from '../footer/SocialLinkBar';
-
+import React, { useState } from 'react'
+import { Send } from 'lucide-react'
+import SocialLinkBar from '../footer/SocialLinkBar'
+import FooterLink from '../footer/FooterLink'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
+  const currentYear = new Date().getFullYear()
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState("")
 
@@ -20,86 +18,74 @@ const Footer = () => {
     }
 
     console.log("Submitted email:", email)
-
     setStatus("Thank you for subscribing! 🎉")
-    setEmail("") // reset input
+    setEmail("")
   }
 
   return (
-    <footer className="">
-      <div className="px-8 sm:px-12 lg:px-16 pt-8 md:pt-12 lg:pt-16">
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> */}
-        <div className="flex justify-around items-center flex-wrap gap-12">
+    <footer className="bg-[#181818] text-white">
+      <div className="container-wrapper">
+        <div className="padding-wrapper-y grid gap-12 lg:grid-cols-3">
 
-          <div className="block lg:hidden">
+          {/* Left: Logo + Social Links */}
+          <div>
             <SocialLinkBar />
           </div>
 
-          {/* NewsLetter */}
-          <div className="">
-            <h2 className="text-xl font-bold tracking-tight">Stay Connected</h2>
-            <p className="mb-2 text-gray-600">
+          {/* Middle: Links (Policies + Company) */}
+          <div className="max-w-md mx-auto grid grid-cols-2 gap-16 sm:gap-36">
+            {/* Policies */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Policies</h4>
+              <ul className="space-y-3">
+                <li><FooterLink href="/privacy-policy">Privacy Policy</FooterLink></li>
+                <li><FooterLink href="/trust-center">Trust Center</FooterLink></li>
+                <li><FooterLink href="/terms-conditions">Terms & Conditions</FooterLink></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <ul className="space-y-3">
+                <li><FooterLink href="/careers">Careers</FooterLink></li>
+                <li><FooterLink href="/about">About Us</FooterLink></li>
+                <li><FooterLink href="/contact">Contact Us</FooterLink></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right: Newsletter */}
+          <div className='w-full max-w-md mx-auto'>
+            <h2 className="text-xl font-bold tracking-tight mb-2">Stay Connected</h2>
+            <p className="mb-4 text-gray-400 text-sm">
               Join our newsletter for the latest updates and exclusive offers.
             </p>
-            <form className="flex gap-2 justify-center items-center p-1 pl-0" onSubmit={handleSubmit}>
+
+            <form onSubmit={handleSubmit} className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)} // update state
-                className="flex-1 rounded-md border border-gray-300 bg-white/70 px-3 py-2 pr-12 text-sm shadow-sm backdrop-blur-sm focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-md border border-gray-600 bg-[#222] px-3 py-2 text-sm text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
               />
               <button
                 type="submit"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white cursor-pointer"
+                className="h-8 w-8 flex justify-center items-center rounded-full bg-white text-black hover:bg-primary/90 transition"
               >
-                <Send className="h-4 w-4" />
+                <Send className="h-5 w-5" />
                 <span className="sr-only">Subscribe</span>
               </button>
             </form>
 
-            {status && (
-              <p className="mt-3 text-sm text-gray-700">{status}</p>
-            )}
-
-            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
+            {status && <p className="mt-3 text-sm text-gray-400">{status}</p>}
           </div>
-
-          {/* Policies */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Policies</h4>
-            <ul className="space-y-3">
-              <li><Link href="/privacy-policy" className="text-gray-800 hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/trust-center" className="text-gray-800 hover:text-gray-600 transition-colors">Trust Center</Link></li>
-              <li><Link href="/terms-conditions" className="text-gray-800 hover:text-gray-600 transition-colors">Terms & Conditions</Link></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Company</h4>
-            <ul className="space-y-3">
-              <li><Link href="/careers" className="text-gray-800 hover:text-gray-600 transition-colors">Careers</Link></li>
-              <li><Link href="/about" className="text-gray-800 hover:text-gray-600 transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="text-gray-800 hover:text-gray-600 transition-colors">Contact Us</Link></li>
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div className="hidden lg:block">
-            <SocialLinkBar />
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 mt-6 lg:mt-12">
-          <p className="text-gray-400 text-sm text-center p-4">
-            © {currentYear} Pinnacle Technologies and Media Solution Pvt Ltd copyright reserved 2024
-          </p>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
