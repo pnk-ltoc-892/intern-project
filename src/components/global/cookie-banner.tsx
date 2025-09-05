@@ -141,13 +141,12 @@ const CookiePanel = (props: CookiePanelProps) => {
       aria-live="polite"
       aria-label="Cookie consent"
       className={cn(
-        "fixed right-4 bottom-4 md:right-6 md:bottom-6",
-        "z-50 w-[360px] max-w-[90vw]"
+        "fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm"
       )}
     >
       <div
         className={cn(
-          "relative border border-border/70 rounded-xl bg-card/95 text-card-foreground shadow-xl backdrop-blur",
+          "relative border border-border/70 rounded-xl bg-card/95 text-card-foreground shadow-xl backdrop-blur w-[360px] max-w-[90vw] mx-8 px-4 sm:px-6 lg:px-8",
           "p-4 flex flex-col gap-3",
           visible
             ? cn("animate-in", "fade-in", "slide-in-from-bottom-8")
@@ -192,7 +191,7 @@ const CookiePanel = (props: CookiePanelProps) => {
         </p>
 
         {/* Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex justify-around items-center">
           <button
             type="button"
             onClick={() => setShowPrefs((p) => !p)}

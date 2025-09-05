@@ -83,6 +83,11 @@ const Footer = () => {
             {status && <p className="mt-3 text-sm text-gray-400">{status}</p>}
           </div>
         </div>
+        <div className="border-t border-gray-800 py-4">
+          <p className="text-gray-500 text-xs text-center">
+            © {currentYear} Pinnacle Technologies and Media Solution Pvt Ltd. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   )
