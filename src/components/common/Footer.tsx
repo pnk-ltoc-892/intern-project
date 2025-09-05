@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Middle: Links (Policies + Company) */}
-          <div className="max-w-md mx-auto grid grid-cols-2 gap-16 sm:gap-36">
+          <div className="max-w-md mx-auto grid grid-cols-2 gap-36">
             {/* Policies */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Policies</h4>
