@@ -24,7 +24,6 @@ export default function Home() {
       {/* Sliding Relations Section Marquee */}
       <RelationsSection />
 
-
       {/* Industries Section */}
       <IndustriesSection />
 
