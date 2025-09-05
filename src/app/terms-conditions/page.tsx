@@ -14,8 +14,8 @@ export default function TermsConditions() {
         ]}
       />
 
-      <section className="py-10 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-50">
+        <div className="container-wrapper padding-wrapper-y">
           <div className="max-w-4xl mx-auto">
             {termsData.map((term, index) => (
               <TermsCard
@@ -28,7 +28,6 @@ export default function TermsConditions() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

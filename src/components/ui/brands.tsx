@@ -26,12 +26,12 @@ export const BrandsGrid = React.forwardRef<HTMLDivElement, BrandsGridProps>(
         return (
             <div
                 ref={ref}
-                className={cn("py-12", className)}
+                className={cn("container-wrapper padding-wrapper-y", className)}
                 {...props}
             >
-                <div className="max-w-screen-xl mx-auto px-4 lg:px-8">
+                <div className="">
                     {title && (
-                        <p className="text-xl text-gray-600 max-w-xl mx-auto text-pretty text-center font-medium mb-2 text-foreground">
+                        <p className="text-xl text-gray-600 max-w-xl mx-auto text-pretty text-center font-medium mb-2">
                             {title}
                         </p>
                     )}

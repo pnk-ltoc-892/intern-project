@@ -29,8 +29,8 @@ export default function Careers() {
       <CareersPageHeader />
 
       {/* Why Work With Us Section - (Benefits Cards) */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-100">
+        <div className="container-wrapper padding-wrapper-y">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Work With Us?</h2>
             <p className="text-center sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6">
@@ -55,8 +55,8 @@ export default function Careers() {
 
 
       {/* Open Positions Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-50">
+        <div className="container-wrapper padding-wrapper-y">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Open Positions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -134,8 +134,8 @@ export default function Careers() {
 
 
       {/* Culture Section */}
-      <section className="py-10 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-100">
+        <div className="container-wrapper padding-wrapper-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Culture</h2>

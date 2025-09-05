@@ -6,7 +6,7 @@ import { securityFeatures, securityPractices } from '@/data/TrustCenter';
 
 export default function TrustCenter() {
   return (
-    <div>
+    <div className='bg-white'>
       <PageTitleHeader
         heading="Trust Center"
         breadcrumbs={[
@@ -15,44 +15,42 @@ export default function TrustCenter() {
         ]}
       />
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Security Practices
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We follow industry best practices and maintain a comprehensive
-              security program to protect your data and our systems.
-            </p>
-          </div>
+      <section className="container-wrapper padding-wrapper-y">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our Security Practices
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We follow industry best practices and maintain a comprehensive
+            security program to protect your data and our systems.
+          </p>
+        </div>
 
-          {/* Dynamic Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {securityPractices.map((practice, index) => {
-              const Icon = practice.icon
-              return (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-gray-800" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {practice.title}
-                  </h3>
-                  <p className="text-gray-600">{practice.description}</p>
+        {/* Dynamic Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {securityPractices.map((practice, index) => {
+            const Icon = practice.icon
+            return (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-8 h-8 text-gray-800" />
                 </div>
-              );
-            })}
-          </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {practice.title}
+                </h3>
+                <p className="text-gray-600">{practice.description}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* Certifications */}
       <Certifications />
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white">
+        <div className="container-wrapper padding-wrapper-y">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Security First

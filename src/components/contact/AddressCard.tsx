@@ -15,7 +15,7 @@ interface Props {
 
 export default function AddressCard({ data }: Props) {
     return (
-        <div className="bg-gray-50 flex flex-col gap-3 p-5 rounded-2xl shadow-md w-full sm:w-full text-md font-semibold">
+        <div className="bg-gray-100 flex flex-col gap-3 p-5 rounded-2xl shadow-md w-full sm:w-full text-md font-semibold">
             {/* Country & Map */}
             <iframe
                 src={data.mapUrl}

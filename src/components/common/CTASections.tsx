@@ -2,9 +2,9 @@ import Link from "next/link.js";
 
 export default function CTASection() {
     return (
-        <div className="bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px] flex justify-center sm:justify-end px-4 sm:px-12">
-            <section className="min-h-[50vh] w-full flex flex-col items-center justify-center text-center py-16">
-                <div className="max-w-2xl">
+        <div className="bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px] flex justify-center sm:justify-end">
+            <section className="container-wrapper padding-wrapper-y min-h-[50vh] w-full flex flex-col items-center justify-center text-center">
+                <div className="">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
                         Don't See a Perfect Fit?
                     </h1>
