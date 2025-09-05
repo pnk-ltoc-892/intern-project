@@ -8,7 +8,7 @@ export default function HeroSection() {
         <div className="bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px] pointer-events-none'">
 
             {/* Hero Section */}
-            <section className="container-wrapper padding-wrapper-y min-h-[80vh] flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+            <section className="container-wrapper padding-wrapper-y min-h-[60vh] flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
                 {/* Left Content */}
                 <div className="w-full lg:w-1/2 text-left flex flex-col justify-center padding-wrapper-x">
                     <h1 className="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 md:mb-6 leading-tight">

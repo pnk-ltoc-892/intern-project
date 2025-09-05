@@ -83,47 +83,51 @@ export default function Solutions() {
             <SolutionHeader productHeader={productHeader} />
 
             {/* Product Video */}
-            <div className="relative px-8 sm:px-12 lg:px-24 py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
-                {/* Decorative blur circle */}
-                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-primary/10 blur-3xl"></div>
+            <section className='bg-gradient-to-b from-gray-100 via-white to-gray-300'>
+                <div className="container-wrapper padding-wrapper-y overflow-auto">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+                            Product In Action
+                        </h2>
+                        <p className="text-lg text-gray-600 mb-8">
+                            See how our solution transforms workflows with seamless integration and an intuitive experience.
+                        </p>
+                    </div>
 
-                <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-                        Product In Action
-                    </h2>
-                    <p className="text-lg text-gray-600 mb-8">
-                        See how our solution transforms workflows with seamless integration and an intuitive experience.
-                    </p>
-                </div>
-
-                {/* Video Container */}
-                <div className="w-full max-w-3xl mx-auto">
-                    <div className="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-white/70 backdrop-blur-sm">
-                        <VideoPlayer
-                            thumbnailUrl="https://images.unsplash.com/photo-1593642532454-e138e28a63f4?q=80&w=2069&auto=format&fit=crop"
-                            videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                            title="Building the Future"
-                            description="A look into modern architecture and design."
-                            className="rounded-2xl"
-                        />
+                    {/* Video Container */}
+                    <div className="w-full max-w-3xl mx-auto">
+                        <div className="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-white/70 backdrop-blur-sm">
+                            <VideoPlayer
+                                thumbnailUrl="https://images.unsplash.com/photo-1593642532454-e138e28a63f4?q=80&w=2069&auto=format&fit=crop"
+                                videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                                title="Building the Future"
+                                description="A look into modern architecture and design."
+                                className="rounded-2xl"
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
 
             {/* Solution Features Flex */}
-            {productFeatures.map((feature, index) => (
-                <SolutionFeatureSection
-                    key={index}
-                    title={feature.title}
-                    description={feature.description}
-                    imageSrc={feature.imageSrc}
-                    reverse={feature.reverse}
-                />
-            ))}
+            <section className='bg-gray-100'>
+                <div className='container-wrapper padding-wrapper-y'>
+                    {productFeatures.map((feature, index) => (
+                        <SolutionFeatureSection
+                            key={index}
+                            title={feature.title}
+                            description={feature.description}
+                            imageSrc={feature.imageSrc}
+                            reverse={feature.reverse}
+                        />
+                    ))}
+                </div>
+            </section>
+
 
             {/* Salient Features Grid*/}
-            <div className='px-8 sm:px-12 lg:px-24 py-8 md:py-12 lg:py-16'>
+            <div className='container-wrapper padding-wrapper-y'>
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                         Salient Features

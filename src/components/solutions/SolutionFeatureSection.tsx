@@ -17,7 +17,7 @@ const SolutionFeatureSection: React.FC<SolutionFeatureSectionProps> = ({
   reverse = false,
 }) => {
   return (
-    <section className="w-full py-12 px-8 sm:px-12 lg:px-24 bg-gray-100">
+    <section className="w-full py-12 px-8 sm:px-12 lg:px-24">
       <div
         className={`container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center ${
           reverse ? 'md:flex-row-reverse' : ''
