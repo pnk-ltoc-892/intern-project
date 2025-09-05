@@ -41,71 +41,73 @@ export default function Blogs() {
       {/* Blog Page Header */}
       <BlogsPageHeader />
 
-      {/* Blog Search + Categories */}
-      <section className="px-4 max-w-7xl mx-auto pt-12">
-        {/* Search bar */}
-        <div className="mb-8 flex justify-center">
-          <input
-            type="text"
-            placeholder="Search blogs..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-white w-full lg:w-1/2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900"
-          />
-        </div>
+      <div className="container-wrapper">
+        {/* Blog Search + Categories */}
+        <section className="padding-wrapper-y">
+          {/* Search bar */}
+          <div className="mb-8 flex justify-center">
+            <input
+              type="text"
+              placeholder="Search blogs..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="bg-white w-full lg:w-1/2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900"
+            />
+          </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap gap-2 justify-center mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`text-sm sm:text-md px-2 sm:px-4 sm:py-2 rounded-full font-medium border transition cursor-pointer ${selectedCategory === cat
-                ? "bg-gray-900 text-white border-gray-900"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* Blogs List */}
-      <section className="pb-10 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            {searchTerm || selectedCategory !== "All"
-              ? ""
-              : "Latest Blogs"}
-          </h2>
-        </div>
-
-        {filteredBlogs.length > 0 ? (
-          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredBlogs.map((blog) => (
-              <Link href={`/blogs/${blog.id}`} key={blog.id}>
-                <BlogCard
-                  title={blog.title}
-                  author={blog.author}
-                  readTime={blog.readTime}
-                  category={blog.category}
-                  date={blog.date}
-                  imageUrl={blog.imageUrl}
-                  excerpt={blog.excerpt}
-                />
-              </Link>
+          {/* Category Pills */}
+          <div className="flex flex-wrap gap-2 justify-center mb-10">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`text-sm sm:text-md px-2 sm:px-4 sm:py-2 rounded-full font-medium border transition cursor-pointer ${selectedCategory === cat
+                  ? "bg-gray-900 text-white border-gray-900"
+                  : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                  }`}
+              >
+                {cat}
+              </button>
             ))}
           </div>
-        ) : (
-          <p className="text-center text-gray-600 mt-6">
-            No blogs found. Try a different search or category.
-          </p>
-        )}
-      </section>
+        </section>
+
+        {/* Blogs List */}
+        <section className="">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              {searchTerm || selectedCategory !== "All"
+                ? ""
+                : "Latest Blogs"}
+            </h2>
+          </div>
+
+          {filteredBlogs.length > 0 ? (
+            <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredBlogs.map((blog) => (
+                <Link href={`/blogs/${blog.id}`} key={blog.id}>
+                  <BlogCard
+                    title={blog.title}
+                    author={blog.author}
+                    readTime={blog.readTime}
+                    category={blog.category}
+                    date={blog.date}
+                    imageUrl={blog.imageUrl}
+                    excerpt={blog.excerpt}
+                  />
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-600 mt-6">
+              No blogs found. Try a different search or category.
+            </p>
+          )}
+        </section>
+      </div>
 
       {/* Newsletter Component */}
-      <div className="bg-gray-100 py-10">
+      <div className="bg-gray-100">
         <Newsletter />
       </div>
     </div>

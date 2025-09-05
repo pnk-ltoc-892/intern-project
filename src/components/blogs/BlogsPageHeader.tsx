@@ -5,15 +5,16 @@ import Link from 'next/link';
 const BlogsPageHeader = () => {
     return (
         <div className="bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_4px),linear-gradient(to_bottom,#80808012_1px,transparent_4px)] bg-[size:28px_28px] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
-            {/* Breadcrumb */}
-            <div className="container mx-auto px-4 py-6 text-sm text-gray-700 flex gap-2 font-medium">
-                <Link href="/" className="hover:underline">Home</Link>
-                <span>{'>'}</span>
-                <Link href="/blogs" className="hover:underline">Blogs</Link>
-            </div>
 
-            {/* Hero Section */}
-            <section className="container mx-auto px-4 py-8">
+            <section className='container-wrapper padding-wrapper-y'>
+                {/* Breadcrumb */}
+                <div className="text-md text-gray-700 flex gap-2 font-medium">
+                    <Link href="/" className="hover:underline">Home</Link>
+                    <span>{'>'}</span>
+                    <Link href="/blogs" className="hover:underline">Blogs</Link>
+                </div>
+
+                {/* Hero Section */}
                 <div className="flex flex-col gap-8 items-center justify-center min-h-[30vh]">
                     {/* Text Content */}
                     <div className="text-black text-center">
