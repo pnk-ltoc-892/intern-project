@@ -12,6 +12,7 @@ import FeaturesFlex from '@/components/home/FeaturesFlex';
 import IndustriesSection from '@/components/home/IndustriesSection';
 
 
+
 export default function Home() {
   
   return (
@@ -41,6 +42,7 @@ export default function Home() {
       <FeaturesFlex />
 
 
+
       {/* Testimonial Sections */}
       <TestimonialSection />
 
@@ -48,7 +50,7 @@ export default function Home() {
       {/* Infinite Sliding Cards Section */}
       {/* // ! Optimize For Sliding Image Section */}
       <Newsletter />
-      
+
 
       {/* FAQ Section */}
       <FAQSection />

@@ -33,12 +33,18 @@ export const StickyScroll = ({
     });
 
     return (
-        <section ref={ref} className="relative w-full bg-gray-50 py-20">
+        <section ref={ref} className="container-wrapper bg-gray-50 py-20">
             <div className="container mx-auto flex flex-col lg:flex-row gap-12">
                 {/* Left content */}
                 <div className="flex-1 space-y-24 px-4 lg:px-6">
                     {content.map((item, index) => (
-                        <div key={item.title + index} className="scroll-mt-20">
+                        <div
+                            key={item.title + index}
+                            className={cn(
+                                "scroll-mt-20",
+                                index === content.length - 1 && "lg:mb-[20vh]" // 👈 extra margin for last element
+                            )}
+                        >
                             <motion.h2
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: activeCard === index ? 1 : 0.4 }}
@@ -68,6 +74,7 @@ export const StickyScroll = ({
                         </div>
                     ))}
                 </div>
+
 
                 {/* Right sticky panel */}
                 <div
