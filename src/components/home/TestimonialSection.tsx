@@ -5,7 +5,7 @@ import { Testimonial } from '../ui/testimonial-card'
 
 const TestimonialSection = () => {
     return (
-        <div className="bg-gray-100 px-4 sm:px-8 lg:px-12 py-8 md:py-12 lg:py-16 gap-8 ">
+        <div className="bg-gray-100 container-wrapper padding-wrapper-y gap-8 ">
             <div className="max-w-3xl mx-auto text-center">
                 <span className="inline-block bg-gray-200 text-gray-800 text-sm font-semibold uppercase rounded-full px-3 py-1 mb-4">
                     Our Testimonials

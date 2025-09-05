@@ -24,6 +24,7 @@ export default function Home() {
       {/* Sliding Relations Section Marquee */}
       <RelationsSection />
 
+
       {/* Industries Section */}
       <IndustriesSection />
 
@@ -31,11 +32,14 @@ export default function Home() {
       {/* How It Works Section */}
       <HowItWorks />
 
+
       {/* Integration Section */}
       <PluginIntegration />
 
+
       {/* Feature Sticky Scroll*/}
       <FeaturesFlex />
+
 
       {/* Testimonial Sections */}
       <TestimonialSection />
@@ -44,6 +48,7 @@ export default function Home() {
       {/* Infinite Sliding Cards Section */}
       {/* // ! Optimize For Sliding Image Section */}
       <Newsletter />
+      
 
       {/* FAQ Section */}
       <FAQSection />

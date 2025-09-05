@@ -53,7 +53,7 @@ export const Newsletter: FC = () => {
 
     if (subscribed) {
         return (
-            <section className="bg-gray-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+            <section className="bg-gray-50">
                 <div className="mx-auto max-w-lg sm:max-w-xl md:max-w-2xl bg-white p-6 sm:p-8 rounded-xl shadow">
                     <SuccessMessage />
                 </div>
@@ -62,7 +62,7 @@ export const Newsletter: FC = () => {
     }
 
     return (
-        <section className="bg-white px-4 sm:px-6 lg:px-8">
+        <section className="bg-gray-50 container-wrapper padding-wrapper-y">
             <div className="mx-auto w-full max-w-2xl lg:max-w-3xl p-2 sm:p-4 rounded-2xl">
 
                 <div className='flex justify-center items-center'>
