@@ -22,12 +22,7 @@ export default function Home() {
 
 
       {/* Sliding Relations Section Marquee */}
-      <div className='px-4 lg:px-8'>
-        <h2 className="flex justify-center text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold tracking-tighter mt-5 py-1 px-4">
-          Our Relations
-        </h2>
-        <RelationsSection />
-      </div>
+      <RelationsSection />
 
 
       {/* Industries Section */}
